@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tropiblend.com/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-product-lineup.jpg</image:loc></image:image>
@@ -13,5 +13,85 @@
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickled-onion-cagayan-de-oro.jpg</image:loc></image:image>
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-pesto-cagayan-de-oro.jpg</image:loc></image:image>
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-mango-salad-dressing-cagayan-de-oro.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-mango-salsa-guide.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pineapple-salsa-guide.jpg</image:loc></image:image>
   </url>
+  <!-- blogbot:sitemap -->
+  <url>
+    <loc>https://tropiblend.com/blog/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/what-is-tropiblend/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-product-lineup.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/where-to-buy-tropiblend-cagayan-de-oro/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-msme-sm-cdo-downtown.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/how-to-order-tropiblend/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-store-sign.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/what-to-eat-with-mango-salsa/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-mango-salsa-guide.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/what-to-eat-with-pineapple-salsa/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pineapple-salsa-guide.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/ways-to-use-pickled-onions/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickled-onion-cagayan-de-oro.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/ways-to-use-pesto/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pesto-cagayan-de-oro.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/best-condiments-for-inihaw/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickled-onion-cagayan-de-oro.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/food-gift-ideas-cagayan-de-oro/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-product-lineup.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/pickled-cucumber-vs-atchara/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickled-cucumber-cagayan-de-oro.jpg</image:loc></image:image>
+  </url>
+  <!-- /blogbot:sitemap -->
 </urlset>

@@ -338,6 +338,10 @@ p { margin: 0 0 1em; }
   border-radius: var(--radius-lg); overflow: hidden; background: var(--parchment); box-shadow: var(--shadow);
 }
 .recipe-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; transition: transform .6s; }
+/* Landscape guides: wider media column, show the whole poster uncropped */
+.recipe-wide { grid-template-columns: 1.3fr .7fr; }
+.recipe-wide.recipe-reverse { grid-template-columns: .7fr 1.3fr; }
+.recipe-wide .recipe-media img { aspect-ratio: 1490 / 1055; }
 .recipe-media:hover img, .find-media:hover img { transform: scale(1.03); }
 
 .zoom-hint {
@@ -354,13 +358,15 @@ p { margin: 0 0 1em; }
 
 .recipe-body > p { color: var(--ink-soft); }
 .steps { list-style: none; padding: 0; margin: 24px 0; display: grid; gap: 12px; }
+/* Number badge is absolutely positioned so inline <strong> text flows normally */
 .steps li {
-  display: flex; align-items: center; gap: 16px;
+  position: relative;
   background: var(--paper); border: 1px solid #ece3cf; border-radius: var(--radius);
-  padding: 14px 18px; font-size: 1.02rem;
+  padding: 20px 18px 20px 72px; font-size: 1.02rem; line-height: 1.5;
 }
 .steps li span {
-  flex: none; width: 38px; height: 38px; border-radius: 50%;
+  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%;
   display: grid; place-items: center;
   background: var(--green-900); color: var(--cream);
   font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
@@ -432,6 +438,38 @@ p { margin: 0 0 1em; }
 }
 .faq-list details[open] summary::after { transform: rotate(180deg); }
 .faq-list details p { padding: 0 24px 20px; margin: 0; color: var(--ink-soft); }
+
+/* ---------- Blog cards (homepage "From the blog" + /blog/ pages) ---------- */
+.post-grid {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.post-card a {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--paper); border: 1px solid #ece3cf; border-radius: var(--radius);
+  overflow: hidden; text-decoration: none; color: var(--ink);
+  transition: box-shadow .2s, transform .2s;
+}
+.post-card a:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.post-card-media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--parchment); }
+.post-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.post-card-body { display: flex; flex-direction: column; flex: 1; padding: 18px 20px 20px; }
+.post-card-tag {
+  font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--green-500); margin-bottom: .5em;
+}
+.post-card-title { font-size: 1.2rem; margin-bottom: .45em; }
+.post-card-body p:not(.post-card-tag) { font-size: .95rem; color: var(--ink-soft); }
+.post-card time { margin-top: auto; font-size: .85rem; font-weight: 700; color: var(--ink-soft); }
+.home-blog { background: var(--paper); }
+.home-blog-more { text-align: center; margin: 32px 0 0; }
+
+@media (max-width: 960px) {
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .post-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- Contact ---------- */
 .contact { background: var(--paper); }
@@ -569,9 +607,10 @@ p { margin: 0 0 1em; }
 
   .product-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .recipe, .recipe-reverse { grid-template-columns: 1fr; }
+  .recipe, .recipe-reverse, .recipe-wide, .recipe-wide.recipe-reverse { grid-template-columns: 1fr; }
   .recipe-reverse .recipe-media { order: 0; }
   .recipe-media { max-width: 520px; margin-inline: auto; }
+  .recipe-wide .recipe-media { max-width: 720px; }
 
   .story-inner { grid-template-columns: 1fr; }
   .story-media { max-width: 520px; width: 100%; margin-inline: auto; }
