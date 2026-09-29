@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-PH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | TropiBlend</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#49533B">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/brand/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="checkout-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header checkout-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="TropiBlend home">
+        <img class="brand-mark" src="images/brand/tropiblend-monogram.svg" alt="" width="921" height="722">
+        <img class="brand-wordmark" src="images/brand/tropiblend-wordmark.svg" alt="" width="950" height="208">
+      </a>
+      <a class="checkout-back" href="./#products">&larr; Continue shopping</a>
+    </div>
+  </header>
+
+  <main id="main" class="section checkout">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Checkout</p>
+        <h1>Complete your order</h1>
+        <div class="leaf-rule" aria-hidden="true"><span></span><i class="leaf-mark"></i><span></span></div>
+      </header>
+
+      <!-- Shown when the shop isn't configured yet -->
+      <div class="checkout-notice" id="checkout-closed" hidden>
+        <h2>Online checkout is opening soon</h2>
+        <p>In the meantime, order by messaging <a href="https://m.me/TropiBlendph" target="_blank" rel="noopener">TropiBlendph on Facebook</a>, calling or texting <a href="tel:+639564479961">0956 447 9961</a>, or emailing <a href="mailto:elsie@tropiblend.com">elsie@tropiblend.com</a>.</p>
+      </div>
+
+      <!-- Shown when the cart is empty -->
+      <div class="checkout-notice" id="checkout-empty" hidden>
+        <h2>Your cart is empty</h2>
+        <p>Add a few jars and come back here to pay with GCash.</p>
+        <a class="btn btn-primary" href="./#products">Browse products</a>
+      </div>
+
+      <form class="checkout-grid" id="checkout-form" method="POST" enctype="multipart/form-data" novalidate hidden>
+        <div class="checkout-main">
+
+          <!-- 1. Details -->
+          <section class="checkout-step" aria-labelledby="step-1">
+            <h2 id="step-1"><span class="step-num">1</span> Your details</h2>
+            <div class="field">
+              <label for="c-name">Full name</label>
+              <input id="c-name" name="Name" type="text" autocomplete="name" required>
+              <p class="field-error" hidden>Please enter your name.</p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-mobile">Mobile number</label>
+                <input id="c-mobile" name="Mobile number" type="tel" autocomplete="tel" inputmode="tel" placeholder="09XX XXX XXXX" required>
+                <p class="field-error" hidden>Please enter a valid PH mobile number (e.g. 0917 123 4567).</p>
+              </div>
+              <div class="field">
+                <label for="c-email">Email <span class="optional">(optional, for your receipt)</span></label>
+                <input id="c-email" name="email" type="email" autocomplete="email">
+                <p class="field-error" hidden>That email doesn't look right.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Pickup or delivery -->
+          <section class="checkout-step" aria-labelledby="step-2">
+            <h2 id="step-2"><span class="step-num">2</span> Pickup or delivery</h2>
+            <fieldset class="choice-group">
+              <legend class="sr-only">How would you like to get your order?</legend>
+              <label class="choice">
+                <input type="radio" name="Pickup or delivery" value="Pickup" checked>
+                <span><strong>Pickup</strong> We'll message you the pickup details in Cagayan de Oro.</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="Pickup or delivery" value="Delivery">
+                <span><strong>Delivery within CDO</strong> <span data-delivery-label>Delivery fee confirmed by message.</span></span>
+              </label>
+            </fieldset>
+            <div class="delivery-fields" id="delivery-fields" hidden>
+              <div class="field">
+                <label for="c-address">Delivery address</label>
+                <textarea id="c-address" name="Delivery address" rows="2" autocomplete="street-address" placeholder="House no., street, subdivision, landmark"></textarea>
+                <p class="field-error" hidden>Please enter your delivery address.</p>
+              </div>
+              <div class="field">
+                <label for="c-barangay">Barangay</label>
+                <input id="c-barangay" name="Barangay" type="text" autocomplete="address-level3" placeholder="e.g. Carmen, Lapasan, Bulua">
+                <p class="field-error" hidden>Please enter your barangay.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-date">Preferred date <span class="optional">(optional)</span></label>
+                <input id="c-date" name="Preferred date" type="date">
+              </div>
+              <div class="field">
+                <label for="c-notes">Notes <span class="optional">(optional)</span></label>
+                <input id="c-notes" name="Notes" type="text" placeholder="e.g. gift wrap, call before arriving">
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Pay -->
+          <section class="checkout-step" aria-labelledby="step-3">
+            <h2 id="step-3"><span class="step-num">3</span> Pay with GCash</h2>
+            <div class="gcash-card">
+              <div class="gcash-qr">
+                <img id="gcash-qr" alt="TropiBlend GCash QR code" width="220" height="220">
+                <p class="gcash-qr-missing" id="gcash-qr-missing" hidden>QR code unavailable. Send to the GCash number instead.</p>
+                <a class="gcash-download" id="gcash-download" download="TropiBlend-GCash-QR.png">Save QR image</a>
+              </div>
+              <div class="gcash-info">
+                <p class="gcash-amount-label">Amount to pay</p>
+                <p class="gcash-amount" data-total>₱0.00</p>
+                <dl class="gcash-details">
+                  <div><dt>GCash name</dt><dd data-gcash-name></dd></div>
+                  <div><dt>GCash number</dt><dd><span data-gcash-number></span> <button type="button" class="copy-btn" data-copy-number>Copy</button></dd></div>
+                </dl>
+                <ol class="gcash-steps">
+                  <li>Open GCash and tap <strong>Pay QR</strong> (scan or upload the QR), or <strong>Send Money</strong> to the number above.</li>
+                  <li>Pay the <strong>exact amount</strong> shown.</li>
+                  <li>Take a <strong>screenshot</strong> of the successful payment and upload it below.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-proof">Payment screenshot</label>
+              <label class="upload" for="c-proof" id="upload-box">
+                <input id="c-proof" name="attachment" type="file" accept="image/*" required>
+                <span class="upload-empty">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <strong>Tap to upload your GCash receipt</strong>
+                  <span>JPG or PNG screenshot</span>
+                </span>
+                <span class="upload-preview" hidden><img alt="Your payment screenshot" id="proof-preview"><span id="proof-name"></span><span class="upload-change">Change</span></span>
+              </label>
+              <p class="field-error" id="proof-error" hidden>Please upload a screenshot of your GCash payment.</p>
+            </div>
+            <div class="field">
+              <label for="c-ref">GCash reference number <span class="optional">(optional, helps us match your payment)</span></label>
+              <input id="c-ref" name="GCash reference no." type="text" inputmode="numeric" autocomplete="off">
+            </div>
+          </section>
+
+          <!-- FormSubmit settings -->
+          <input type="hidden" name="Order ID" id="f-order-id">
+          <input type="hidden" name="Items ordered" id="f-items">
+          <input type="hidden" name="Items subtotal" id="f-subtotal">
+          <input type="hidden" name="Delivery fee" id="f-delivery">
+          <input type="hidden" name="TOTAL PAID" id="f-total">
+          <input type="hidden" name="_subject" id="f-subject">
+          <input type="hidden" name="_next" id="f-next">
+          <input type="hidden" name="_autoresponse" id="f-autoresponse">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        </div>
+
+        <!-- Order summary -->
+        <aside class="checkout-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Order summary</h2>
+          <ul class="summary-items" data-summary-items></ul>
+          <dl class="summary-totals">
+            <div><dt>Subtotal</dt><dd data-subtotal></dd></div>
+            <div data-delivery-row hidden><dt>Delivery</dt><dd data-delivery></dd></div>
+            <div class="summary-total"><dt>Total</dt><dd data-total></dd></div>
+          </dl>
+          <p class="summary-note" data-delivery-note hidden>Delivery fee will be confirmed by message and paid separately.</p>
+          <button class="btn btn-primary btn-block" type="submit" id="place-order">Place order</button>
+          <p class="summary-fine">We'll confirm your order by text or Messenger once we've checked your GCash payment.</p>
+        </aside>
+      </form>
+    </div>
+  </main>
+
+  <footer class="checkout-footer">
+    <div class="container">
+      <p>Questions? Message <a href="https://m.me/TropiBlendph" target="_blank" rel="noopener">TropiBlendph</a> or call <a href="tel:+639564479961">0956 447 9961</a>.</p>
+    </div>
+  </footer>
+
+  <script src="shop-config.js" defer></script>
+  <script src="cart.js" defer></script>
+  <script src="checkout.js" defer></script>
+</body>
+</html>

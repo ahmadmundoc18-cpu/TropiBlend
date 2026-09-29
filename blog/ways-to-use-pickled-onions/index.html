@@ -176,6 +176,10 @@
         </ul>
         <a class="btn btn-primary btn-sm nav-cta" href="../../#contact">Order now</a>
       </nav>
+      <a class="cart-link" href="../../checkout.html" data-cart-link hidden aria-label="Cart">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 7h12l-1 13H7L6 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
         <span class="nav-toggle-bar"></span>
@@ -313,6 +317,8 @@
       <a href="#top" class="back-top">Back to top ↑</a>
     </div>
   </footer>
+  <script src="../../shop-config.js" defer></script>
+  <script src="../../cart.js" defer></script>
   <script src="../../blog/blog.js" defer></script>
 </body>
 </html>

@@ -36,7 +36,8 @@
   });
 
   /* ---------- Highlight current section in nav ---------- */
-  var navLinks = Array.prototype.slice.call(nav.querySelectorAll("ul a"));
+  // Only in-page links (#products...), not pages like blog/
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('ul a[href^="#"]'));
   if ("IntersectionObserver" in window) {
     var sectionObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

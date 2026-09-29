@@ -146,6 +146,11 @@
         <a class="btn btn-primary btn-sm nav-cta" href="#contact">Order now</a>
       </nav>
 
+      <a class="cart-link" href="checkout.html" data-cart-link hidden aria-label="Cart">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 7h12l-1 13H7L6 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
+
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
         <span class="nav-toggle-bar"></span>
@@ -256,7 +261,7 @@
                   <summary>Ingredients</summary>
                   <p>Pineapple, bell pepper, onion, lime, cane sugar, salt, pepper, herbs and spices.</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-product="Pineapple Salsa (500 ml)">Order Pineapple Salsa</button>
+                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pineapple-salsa" data-product="Pineapple Salsa (500 ml)">Order Pineapple Salsa</button>
               </div>
             </article>
           </li>
@@ -278,7 +283,7 @@
                   <summary>Ingredients</summary>
                   <p>Mango, bell pepper, onion, lime, cane sugar, salt, pepper, herbs and spices.</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-product="Mango Salsa (500 ml)">Order Mango Salsa</button>
+                <button class="btn btn-primary btn-block order-btn" type="button" data-id="mango-salsa" data-product="Mango Salsa (500 ml)">Order Mango Salsa</button>
               </div>
             </article>
           </li>
@@ -300,7 +305,7 @@
                   <summary>Ingredients</summary>
                   <p>Japanese cucumber, dill, lime, cane sugar, salt, pepper, herbs and spices.</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-product="Pickled Cucumber (500 ml)">Order Pickled Cucumber</button>
+                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pickled-cucumber" data-product="Pickled Cucumber (500 ml)">Order Pickled Cucumber</button>
               </div>
             </article>
           </li>
@@ -322,7 +327,7 @@
                   <summary>Ingredients</summary>
                   <p>Onion, cane sugar, salt, pepper, herbs and spices.</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-product="Pickled Onion (350 ml)">Order Pickled Onion</button>
+                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pickled-onion" data-product="Pickled Onion (350 ml)">Order Pickled Onion</button>
               </div>
             </article>
           </li>
@@ -345,7 +350,7 @@
                   <p>Basil, parmesan cheese, extra virgin olive oil, cashew nuts, herbs and spices.</p>
                   <p class="allergen"><strong>Contains:</strong> tree nuts (cashew) and dairy.</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-product="Pesto (300 ml)">Order Pesto</button>
+                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pesto" data-product="Pesto (300 ml)">Order Pesto</button>
               </div>
             </article>
           </li>
@@ -367,7 +372,7 @@
                   <summary>Ingredients</summary>
                   <p>Mango, lime, cane sugar, salt, pepper, herbs and spices.</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-product="Mango Salad Dressing (350 ml)">Order Mango Dressing</button>
+                <button class="btn btn-primary btn-block order-btn" type="button" data-id="mango-salad-dressing" data-product="Mango Salad Dressing (350 ml)">Order Mango Dressing</button>
               </div>
             </article>
           </li>
@@ -748,6 +753,29 @@
     </div>
   </footer>
 
+  <!-- Cart (only shown once prices and GCash details are set in shop-config.js) -->
+  <dialog class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title">
+    <div class="cart-panel">
+      <header class="cart-head">
+        <h2 id="cart-title">Your cart</h2>
+        <button class="cart-close" type="button" data-cart-close aria-label="Close cart">&times;</button>
+      </header>
+      <div class="cart-body">
+        <div class="cart-empty" data-cart-empty>
+          <p>Your cart is empty.</p>
+          <a class="btn btn-ghost btn-sm" href="#products" data-cart-close>Browse products</a>
+        </div>
+        <ul class="cart-items" data-cart-items></ul>
+      </div>
+      <footer class="cart-foot" data-cart-foot hidden>
+        <p class="cart-subtotal"><span>Subtotal</span> <strong data-cart-subtotal></strong></p>
+        <p class="cart-note">Pay securely with GCash at checkout. Pickup or delivery within Cagayan de Oro.</p>
+        <a class="btn btn-primary btn-block" href="checkout.html">Checkout</a>
+        <button class="btn btn-ghost btn-block" type="button" data-cart-close>Continue shopping</button>
+      </footer>
+    </div>
+  </dialog>
+
   <!-- Lightbox -->
   <dialog class="lightbox" id="lightbox" aria-label="Image preview">
     <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
@@ -757,6 +785,8 @@
   <!-- Toast for form status -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="shop-config.js" defer></script>
+  <script src="cart.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

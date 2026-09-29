@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-PH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order received | TropiBlend</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#49533B">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/brand/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="checkout-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header checkout-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="TropiBlend home">
+        <img class="brand-mark" src="images/brand/tropiblend-monogram.svg" alt="" width="921" height="722">
+        <img class="brand-wordmark" src="images/brand/tropiblend-wordmark.svg" alt="" width="950" height="208">
+      </a>
+      <a class="checkout-back" href="./">Back to home</a>
+    </div>
+  </header>
+
+  <main id="main" class="section checkout">
+    <div class="container received">
+      <div class="received-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="36" height="36"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <p class="tagline">Salamat! Thank you for your order.</p>
+      <h1>We've received your order</h1>
+      <p class="received-id" id="received-id" hidden>Order number <strong></strong></p>
+      <p class="received-lead">Your order and GCash payment screenshot have been sent to TropiBlend. We'll check your payment and message you<span id="received-mobile"></span> to confirm and arrange <span id="received-method">pickup or delivery</span>.</p>
+
+      <div class="received-summary" id="received-summary" hidden>
+        <h2>Order summary</h2>
+        <ul class="summary-items" id="received-items"></ul>
+        <dl class="summary-totals">
+          <div><dt>Delivery</dt><dd id="received-fee"></dd></div>
+          <div class="summary-total"><dt>Total paid</dt><dd id="received-total"></dd></div>
+        </dl>
+      </div>
+
+      <div class="received-next">
+        <h2>What happens next</h2>
+        <ol>
+          <li>We match your screenshot with the GCash payment.</li>
+          <li>We message you to confirm, usually the same day.</li>
+          <li>You pick up your jars, or we deliver them in Cagayan de Oro.</li>
+        </ol>
+        <p>Questions about your order? Message <a href="https://m.me/TropiBlendph" target="_blank" rel="noopener">TropiBlendph</a> or call <a href="tel:+639564479961">0956 447 9961</a> and mention your order number.</p>
+      </div>
+      <a class="btn btn-primary" href="./">Back to TropiBlend</a>
+    </div>
+  </main>
+
+  <script src="shop-config.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var id = new URLSearchParams(location.search).get("order");
+      var order = null;
+      try { order = JSON.parse(sessionStorage.getItem("tropiblend-last-order") || "null"); } catch (e) {}
+      if (id && /^TB-[\w-]+$/.test(id)) {
+        var idEl = document.getElementById("received-id");
+        idEl.querySelector("strong").textContent = id;
+        idEl.hidden = false;
+      }
+      if (order && (!id || order.id === id)) {
+        var cart = window.TropiCart;
+        document.getElementById("received-mobile").textContent = " at " + order.mobile;
+        document.getElementById("received-method").textContent = order.method.toLowerCase();
+        var list = document.getElementById("received-items");
+        order.items.forEach(function (i) {
+          var li = document.createElement("li");
+          li.className = "summary-item";
+          var name = document.createElement("div");
+          name.innerHTML = '<p class="summary-name"></p><p class="summary-meta"></p>';
+          name.querySelector(".summary-name").textContent = i.qty + " × " + i.name;
+          name.querySelector(".summary-meta").textContent = i.size;
+          var price = document.createElement("p");
+          price.className = "summary-price";
+          price.textContent = cart.money(i.total);
+          li.appendChild(name);
+          li.appendChild(price);
+          list.appendChild(li);
+        });
+        document.getElementById("received-fee").textContent = order.fee;
+        document.getElementById("received-total").textContent = cart.money(order.total);
+        document.getElementById("received-summary").hidden = false;
+        // The order went through, so empty the cart
+        cart.clear();
+        sessionStorage.removeItem("tropiblend-last-order");
+      }
+    })();
+  </script>
+</body>
+</html>
