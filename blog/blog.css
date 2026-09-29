@@ -7,39 +7,39 @@
 .post { padding-block: clamp(28px, 5vw, 56px) clamp(56px, 8vw, 96px); }
 .post-container { max-width: 800px; }
 
-.breadcrumb { font-size: .9rem; color: var(--ink-soft); margin-bottom: 28px; }
-.breadcrumb a { color: var(--green-700); font-weight: 700; text-decoration: none; }
+.breadcrumb { font-size: .9rem; color: var(--olive-soft); margin-bottom: 28px; }
+.breadcrumb a { color: var(--olive); font-weight: 700; text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
 .breadcrumb span[aria-hidden] { margin-inline: 6px; opacity: .6; }
 
 .post-head h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); margin-bottom: .4em; text-wrap: balance; }
-.post-meta { color: var(--ink-soft); font-size: .95rem; margin-bottom: 28px; }
+.post-meta { color: var(--olive-soft); font-size: .95rem; margin-bottom: 28px; }
 
 .post-hero {
   margin: 0 0 28px; border-radius: var(--radius-lg); overflow: hidden;
-  box-shadow: var(--shadow); background: var(--parchment);
+  box-shadow: var(--shadow); background: var(--tint-2);
 }
 .post-hero img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 
 /* The answer-first box: what Google snippets and AI assistants lift */
 .quick-answer {
-  background: var(--green-100); border-left: 5px solid var(--green-700);
+  background: var(--tint-2); border-left: 5px solid var(--olive);
   border-radius: var(--radius); padding: 20px 24px; margin-bottom: 36px;
 }
 .quick-answer-label {
   font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--green-700); margin-bottom: .4em;
+  color: var(--olive); margin-bottom: .4em;
 }
-.quick-answer p:last-child { margin: 0; font-size: 1.08rem; color: var(--ink); }
+.quick-answer p:last-child { margin: 0; font-size: 1.08rem; color: var(--olive); }
 
 /* ---------- Table of contents ---------- */
 .toc {
-  background: var(--paper); border: 1px solid #ece3cf; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 18px 24px; margin-bottom: 36px;
 }
 .toc-label {
   font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--green-700); margin-bottom: .5em;
+  color: var(--olive); margin-bottom: .5em;
 }
 .toc ol { margin: 0; padding-left: 1.3em; columns: 2; column-gap: 32px; }
 .toc li { break-inside: avoid; margin-bottom: .3em; }
@@ -51,18 +51,18 @@
 .prose { font-size: 1.08rem; }
 .prose h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 1.6em 0 .5em; }
 .prose h3 { font-size: clamp(1.2rem, 2.2vw, 1.4rem); margin: 1.4em 0 .4em; }
-.prose p, .prose li { color: var(--ink); }
+.prose p, .prose li { color: var(--olive); }
 .prose ul, .prose ol { padding-left: 1.3em; margin: 0 0 1.2em; }
 .prose li { margin-bottom: .45em; }
-.prose li::marker { color: var(--green-700); font-weight: 700; }
-.prose strong { color: var(--green-900); }
+.prose li::marker { color: var(--olive); font-weight: 700; }
+.prose strong { color: var(--olive); }
 
 .post-tip {
-  background: var(--mango-100); border-radius: var(--radius);
+  background: var(--tint); border-radius: var(--radius);
   padding: 16px 20px; margin: 0 0 1.4em;
 }
 .post-tip p { margin: 0; }
-.post-tip p::before { content: "Tip: "; font-weight: 800; color: #8a5d00; }
+.post-tip p::before { content: "Tip: "; font-weight: 800; color: var(--olive); }
 
 .post-figure { margin: 0 0 1.6em; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
 
@@ -75,17 +75,17 @@
 /* ---------- CTA ---------- */
 .post-cta {
   margin-top: 48px; padding: clamp(24px, 4vw, 40px); text-align: center;
-  background: var(--paper); border: 1px solid #ece3cf; border-radius: var(--radius-lg);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
 }
 .post-cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
-.post-cta > p:not(.script-accent) { color: var(--ink-soft); max-width: 34em; margin-inline: auto; }
+.post-cta > p:not(.script-accent) { color: var(--olive-soft); max-width: 34em; margin-inline: auto; }
 .post-cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
 
 /* ---------- Blog index + related (card styles live in /styles.css) ---------- */
 .blog-index { padding-top: clamp(40px, 6vw, 72px); }
 .blog-index h1 { font-size: clamp(2.2rem, 4.8vw, 3.4rem); margin-bottom: .35em; }
 
-.related { background: var(--paper); padding-block: clamp(48px, 7vw, 80px); }
+.related { background: var(--white); padding-block: clamp(48px, 7vw, 80px); }
 .related h2 { text-align: center; margin-bottom: 32px; }
 
 @media (max-width: 600px) {
