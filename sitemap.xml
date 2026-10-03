@@ -16,6 +16,12 @@
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-mango-salsa-guide.jpg</image:loc></image:image>
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-pineapple-salsa-guide.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://tropiblend.com/shop.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- blogbot:sitemap -->
   <url>
     <loc>https://tropiblend.com/blog/</loc>

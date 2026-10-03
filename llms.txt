@@ -19,6 +19,7 @@
 ## Key pages
 
 - [Home](https://tropiblend.com/): products, serving ideas, story, where to buy, FAQ and order form.
+- [Shop](https://tropiblend.com/shop.html): all six products with prices; order online and pay with GCash, pickup or delivery in Cagayan de Oro.
 <!-- blogbot:llms -->
 ## Blog: answers and serving ideas
 

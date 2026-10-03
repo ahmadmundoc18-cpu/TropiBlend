@@ -11,7 +11,7 @@
   var form = $("#checkout-form");
   var MAX_UPLOAD = 4.5 * 1024 * 1024; // stay safely under the email service's attachment limit
 
-  if (!cart.ready) {
+  if (!cart.checkoutReady) {
     $("#checkout-closed").hidden = false;
     return;
   }
@@ -215,6 +215,13 @@
     e.preventDefault();
     if (cart.count() === 0) { showState(); return; }
     if (!validate()) return;
+    if (cfg.demo) {
+      // Placeholder prices/GCash: never send a real order
+      var note = $("#demo-note");
+      note.hidden = false;
+      note.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
 
     var button = $("#place-order");
     button.disabled = true;

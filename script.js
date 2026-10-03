@@ -10,8 +10,10 @@
   function onScroll() {
     header.classList.toggle("is-scrolled", window.scrollY > 8);
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  if (header) {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 
   /* ---------- Mobile navigation ---------- */
   var toggle = document.querySelector(".nav-toggle");
@@ -22,23 +24,25 @@
     toggle.querySelector(".sr-only").textContent = open ? "Close menu" : "Open menu";
     nav.classList.toggle("is-open", open);
   }
-  toggle.addEventListener("click", function () {
-    setNav(toggle.getAttribute("aria-expanded") !== "true");
-  });
-  nav.addEventListener("click", function (e) {
-    if (e.target.closest("a")) setNav(false);
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && nav.classList.contains("is-open")) {
-      setNav(false);
-      toggle.focus();
-    }
-  });
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      setNav(toggle.getAttribute("aria-expanded") !== "true");
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setNav(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        setNav(false);
+        toggle.focus();
+      }
+    });
+  }
 
   /* ---------- Highlight current section in nav ---------- */
-  // Only in-page links (#products...), not pages like blog/
-  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('ul a[href^="#"]'));
-  if ("IntersectionObserver" in window) {
+  // Only in-page links (#products...), not pages like blog/ or shop.html
+  var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll('ul a[href^="#"]')) : [];
+  if (navLinks.length && "IntersectionObserver" in window) {
     var sectionObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -70,111 +74,116 @@
     });
   });
 
-  /* ---------- "Order" buttons pre-select the product in the form ---------- */
-  var form = document.getElementById("order-form");
-  document.querySelectorAll(".order-btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var product = btn.dataset.product;
-      form.querySelectorAll('input[name="product"]').forEach(function (box) {
-        if (box.value === product) box.checked = true;
-      });
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-      showToast(product.replace(/\s*\(.*\)/, "") + " added to your order form");
-      setTimeout(function () {
-        document.getElementById("f-name").focus({ preventScroll: true });
-      }, 600);
-    });
-  });
-
-  /* ---------- Order form → pre-filled email ---------- */
-  function validate(input, errorId) {
-    var ok = input.value.trim().length > 0;
-    input.setAttribute("aria-invalid", String(!ok));
-    var err = document.getElementById(errorId);
-    err.hidden = ok;
-    if (!ok) input.setAttribute("aria-describedby", errorId);
-    else input.removeAttribute("aria-describedby");
-    return ok;
-  }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var name = form.elements.name;
-    var phone = form.elements.phone;
-    var nameOk = validate(name, "f-name-error");
-    var phoneOk = validate(phone, "f-phone-error");
-    if (!nameOk || !phoneOk) {
-      (nameOk ? phone : name).focus();
-      return;
-    }
-
-    var products = Array.prototype.slice
-      .call(form.querySelectorAll('input[name="product"]:checked'))
-      .map(function (box) { return "- " + box.value; });
-
-    var lines = [
-      "Hi TropiBlend!",
-      "",
-      "I'd like to order / ask about:",
-      products.length ? products.join("\n") : "- (not specified)",
-      "",
-      "Quantities & message:",
-      form.elements.message.value.trim() || "-",
-      "",
-      "Name: " + name.value.trim(),
-      "Mobile: " + phone.value.trim(),
-      "Area in CDO: " + (form.elements.area.value.trim() || "-")
-    ];
-
-    var subject = "TropiBlend order inquiry from " + name.value.trim();
-    window.location.href = "mailto:" + ORDER_EMAIL +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(lines.join("\n"));
-    showToast("Opening your email app…");
-  });
-
-  ["name", "phone"].forEach(function (field) {
-    form.elements[field].addEventListener("input", function () {
-      if (this.getAttribute("aria-invalid") === "true") {
-        validate(this, "f-" + field + "-error");
-      }
-    });
-  });
-
   /* ---------- Toast ---------- */
   var toast = document.getElementById("toast");
   var toastTimer;
   function showToast(message) {
+    if (!toast) return;
     toast.textContent = message;
     toast.classList.add("is-visible");
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { toast.classList.remove("is-visible"); }, 3200);
   }
 
-  /* ---------- Lightbox ---------- */
-  var lightbox = document.getElementById("lightbox");
-  var lightboxImg = lightbox.querySelector("img");
-  var lastTrigger = null;
+  /* ---------- Contact form (homepage only) ---------- */
+  var form = document.getElementById("order-form");
+  if (form) {
+    // "Order" buttons pre-select the product in the form (when the online shop is off)
+    document.querySelectorAll(".order-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var product = btn.dataset.product;
+        form.querySelectorAll('input[name="product"]').forEach(function (box) {
+          if (box.value === product) box.checked = true;
+        });
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        showToast(product.replace(/\s*\(.*\)/, "") + " added to your order form");
+        setTimeout(function () {
+          document.getElementById("f-name").focus({ preventScroll: true });
+        }, 600);
+      });
+    });
 
-  document.querySelectorAll("[data-lightbox]").forEach(function (trigger) {
-    trigger.addEventListener("click", function () {
-      if (typeof lightbox.showModal !== "function") {
-        window.open(trigger.dataset.lightbox, "_blank");
+    var validate = function (input, errorId) {
+      var ok = input.value.trim().length > 0;
+      input.setAttribute("aria-invalid", String(!ok));
+      var err = document.getElementById(errorId);
+      err.hidden = ok;
+      if (!ok) input.setAttribute("aria-describedby", errorId);
+      else input.removeAttribute("aria-describedby");
+      return ok;
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.elements.name;
+      var phone = form.elements.phone;
+      var nameOk = validate(name, "f-name-error");
+      var phoneOk = validate(phone, "f-phone-error");
+      if (!nameOk || !phoneOk) {
+        (nameOk ? phone : name).focus();
         return;
       }
-      lastTrigger = trigger;
-      lightboxImg.src = trigger.dataset.lightbox;
-      lightboxImg.alt = trigger.dataset.alt || "";
-      lightbox.showModal();
+
+      var products = Array.prototype.slice
+        .call(form.querySelectorAll('input[name="product"]:checked'))
+        .map(function (box) { return "- " + box.value; });
+
+      var lines = [
+        "Hi TropiBlend!",
+        "",
+        "I'd like to order / ask about:",
+        products.length ? products.join("\n") : "- (not specified)",
+        "",
+        "Quantities & message:",
+        form.elements.message.value.trim() || "-",
+        "",
+        "Name: " + name.value.trim(),
+        "Mobile: " + phone.value.trim(),
+        "Area in CDO: " + (form.elements.area.value.trim() || "-")
+      ];
+
+      var subject = "TropiBlend order inquiry from " + name.value.trim();
+      window.location.href = "mailto:" + ORDER_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(lines.join("\n"));
+      showToast("Opening your email app…");
     });
-  });
-  lightbox.querySelector(".lightbox-close").addEventListener("click", function () { lightbox.close(); });
-  lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) lightbox.close();
-  });
-  lightbox.addEventListener("close", function () {
-    if (lastTrigger) lastTrigger.focus();
-  });
+
+    ["name", "phone"].forEach(function (field) {
+      form.elements[field].addEventListener("input", function () {
+        if (this.getAttribute("aria-invalid") === "true") {
+          validate(this, "f-" + field + "-error");
+        }
+      });
+    });
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    var lightboxImg = lightbox.querySelector("img");
+    var lastTrigger = null;
+
+    document.querySelectorAll("[data-lightbox]").forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        if (typeof lightbox.showModal !== "function") {
+          window.open(trigger.dataset.lightbox, "_blank");
+          return;
+        }
+        lastTrigger = trigger;
+        lightboxImg.src = trigger.dataset.lightbox;
+        lightboxImg.alt = trigger.dataset.alt || "";
+        lightbox.showModal();
+      });
+    });
+    lightbox.querySelector(".lightbox-close").addEventListener("click", function () { lightbox.close(); });
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener("close", function () {
+      if (lastTrigger) lastTrigger.focus();
+    });
+  }
 
   /* ---------- Reveal on scroll ---------- */
   var revealTargets = document.querySelectorAll(
@@ -204,5 +213,6 @@
   }
 
   /* ---------- Footer year ---------- */
-  document.getElementById("year").textContent = new Date().getFullYear();
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 })();
