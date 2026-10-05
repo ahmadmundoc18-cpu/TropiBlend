@@ -15,6 +15,9 @@
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-mango-salad-dressing-cagayan-de-oro.jpg</image:loc></image:image>
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-mango-salsa-guide.jpg</image:loc></image:image>
     <image:image><image:loc>https://tropiblend.com/images/tropiblend-pineapple-salsa-guide.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickles-level-up-guide.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickles-grilled-guide.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pesto-guide.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://tropiblend.com/shop.html</loc>
@@ -25,9 +28,16 @@
   <!-- blogbot:sitemap -->
   <url>
     <loc>https://tropiblend.com/blog/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tropiblend.com/blog/are-tropiblend-products-all-natural/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-fresh-from-nature.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://tropiblend.com/blog/what-is-tropiblend/</loc>
@@ -76,14 +86,14 @@
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pesto-cagayan-de-oro.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pesto-guide.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://tropiblend.com/blog/best-condiments-for-inihaw/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickled-onion-cagayan-de-oro.jpg</image:loc></image:image>
+    <image:image><image:loc>https://tropiblend.com/images/tropiblend-pickles-grilled-guide.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://tropiblend.com/blog/food-gift-ideas-cagayan-de-oro/</loc>
