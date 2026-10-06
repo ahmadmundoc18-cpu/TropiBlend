@@ -185,31 +185,105 @@
     });
   }
 
-  /* ---------- Reveal on scroll ---------- */
-  var revealTargets = document.querySelectorAll(
-    ".section-head, .product-card, .lineup-figure, .recipe, .story-inner > *, .find-inner > *, .faq-list, .contact-grid > *"
-  );
-  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    revealTargets.forEach(function (el) {
-      el.classList.add("reveal");
-      revealObserver.observe(el);
-    });
-    // Failsafe: never leave on-screen content hidden if the observer is slow to fire
-    window.addEventListener("load", function () {
+  /* ---------- Swap an image with a quick out/in (src, size and alt) ---------- */
+  function swapImage(img, src, alt, w, h) {
+    if (img.getAttribute("src") === src) return;
+    img.classList.add("is-out");
+    var finished = false;
+    var done = function () {
+      if (finished) return;
+      finished = true;
       setTimeout(function () {
-        revealTargets.forEach(function (el) {
-          if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-in");
-        });
-      }, 1200);
+        img.src = src;
+        if (alt != null) img.alt = alt;
+        if (w) { img.width = w; img.height = h; }
+        requestAnimationFrame(function () { img.classList.remove("is-out"); });
+      }, 160);
+    };
+    var next = new Image();
+    next.onload = next.onerror = done;
+    next.src = src;
+    if (next.complete) done();
+    setTimeout(done, 700); // never leave the old photo faded out on a slow connection
+  }
+
+  /* ---------- Hero flavor switcher ---------- */
+  var hero = document.querySelector(".hero[data-flavor]");
+  if (hero) {
+    var heroImg = hero.querySelector("[data-hero-img]");
+    var tabs = Array.prototype.slice.call(hero.querySelectorAll(".flavor-tab"));
+    var cart = window.TropiCart;
+
+    // Lowest price per product, straight from shop-config.js when it's loaded
+    function fromPrice(tab) {
+      var p = cart && cart.config.products.filter(function (x) { return x.id === tab.dataset.product; })[0];
+      if (!p || !cart.ready) return tab.dataset.from;
+      return cart.money(Math.min.apply(null, p.sizes.map(function (s) { return s.price; }))).replace(/\.00$/, "");
+    }
+
+    function showFlavor(tab) {
+      tabs.forEach(function (t) { t.setAttribute("aria-pressed", String(t === tab)); });
+      hero.dataset.flavor = tab.dataset.flavor;
+      swapImage(heroImg, tab.dataset.img, tab.dataset.alt, tab.dataset.w, tab.dataset.h);
+      hero.querySelector("[data-hero-name]").textContent = tab.dataset.name;
+      hero.querySelector("[data-hero-notes]").textContent = tab.dataset.notes;
+      hero.querySelector("[data-hero-price]").textContent = fromPrice(tab);
+      hero.querySelector("[data-hero-link]").href = "shop.html#" + tab.dataset.product;
+    }
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () { showFlavor(tab); });
+      // warm the cache so the swap is instant
+      ["pointerenter", "focus"].forEach(function (ev) {
+        tab.addEventListener(ev, function () { new Image().src = tab.dataset.img; }, { once: true });
+      });
     });
+    var current = tabs.filter(function (t) { return t.getAttribute("aria-pressed") === "true"; })[0];
+    if (current) hero.querySelector("[data-hero-price]").textContent = fromPrice(current);
+  }
+
+  /* ---------- Product cards: picking a size swaps the jar photo ---------- */
+  document.addEventListener("change", function (e) {
+    var input = e.target.closest("input[data-size]");
+    if (!input) return;
+    var card = input.closest("[data-product]");
+    var img = card.querySelector("[data-size-img]");
+    if (img) swapImage(img, input.dataset.img, input.dataset.alt);
+    var badge = card.querySelector("[data-size-badge]");
+    if (badge) {
+      badge.innerHTML = input.value + "<small>ml</small>";
+      badge.classList.remove("is-bumped");
+      void badge.offsetWidth;
+      badge.classList.add("is-bumped");
+    }
+  });
+
+  /* ---------- Ticker pause button ---------- */
+  var tickerToggle = document.querySelector("[data-ticker-toggle]");
+  if (tickerToggle) {
+    tickerToggle.addEventListener("click", function () {
+      var ticker = tickerToggle.closest(".ticker");
+      var paused = ticker.classList.toggle("is-paused");
+      tickerToggle.setAttribute("aria-pressed", String(paused));
+      tickerToggle.querySelector(".sr-only").textContent = paused ? "Play scrolling text" : "Pause scrolling text";
+    });
+  }
+
+  /* ---------- Guide rail arrows ---------- */
+  var rail = document.querySelector("[data-rail]");
+  if (rail) {
+    var prev = document.querySelector("[data-rail-prev]");
+    var next = document.querySelector("[data-rail-next]");
+    var step = function () { var card = rail.querySelector(".guide"); return card ? card.offsetWidth + 24 : 400; };
+    var smooth = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    prev.addEventListener("click", function () { rail.scrollBy({ left: -step(), behavior: smooth }); });
+    next.addEventListener("click", function () { rail.scrollBy({ left: step(), behavior: smooth }); });
+    var updateArrows = function () {
+      prev.disabled = rail.scrollLeft < 8;
+      next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
+    };
+    rail.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    updateArrows();
   }
 
   /* ---------- Footer year ---------- */

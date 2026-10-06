@@ -5,19 +5,33 @@
    hidden and the site works exactly as before (orders by message/email).
    ========================================================================== */
 window.TROPIBLEND_SHOP = {
-  // PREVIEW MODE: the prices and GCash details below are PLACEHOLDERS.
-  // While this is true, every page shows a "preview" banner and checkout does NOT send orders.
-  // Put in your real prices, GCash name/number and QR, then change this to false.
+  // PREVIEW MODE: the prices are real (from the TropiBlend price list), but the GCash details below
+  // are still PLACEHOLDERS. While this is true, every page shows a "preview" banner and
+  // checkout does NOT send orders. Put in your real GCash name/number and QR, then change this to false.
   demo: true,
 
-  // Prices in pesos, numbers only (e.g. 250 or 249.50). null = not set yet.
+  // Every product comes in two sizes. Prices in pesos, numbers only (e.g. 250 or 249.50).
+  // price: null = not set yet (the shop stays closed until every size has a price).
+  // The first size listed is the one selected by default.
   products: [
-    { id: "pineapple-salsa",      name: "Pineapple Salsa",      size: "500 ml jar",    price: 180, image: "images/tropiblend-pineapple-salsa-cagayan-de-oro.jpg" },
-    { id: "mango-salsa",          name: "Mango Salsa",          size: "500 ml jar",    price: 180, image: "images/tropiblend-mango-salsa-cagayan-de-oro.jpg" },
-    { id: "pickled-cucumber",     name: "Pickled Cucumber",     size: "500 ml jar",    price: 160, image: "images/tropiblend-pickled-cucumber-cagayan-de-oro.jpg" },
-    { id: "pickled-onion",        name: "Pickled Onion",        size: "350 ml jar",    price: 150, image: "images/tropiblend-pickled-onion-cagayan-de-oro.jpg" },
-    { id: "pesto",                name: "Pesto",                size: "300 ml jar",    price: 280, image: "images/tropiblend-pesto-cagayan-de-oro.jpg" },
-    { id: "mango-salad-dressing", name: "Mango Salad Dressing", size: "350 ml bottle", price: 170, image: "images/tropiblend-mango-salad-dressing-cagayan-de-oro.jpg" }
+    { id: "pineapple-salsa", name: "Pineapple Salsa", notes: "Sweet, tangy, fresh", sizes: [
+      { ml: 500, label: "500 ml jar", price: 385, image: "images/products/pineapple-salsa-500.webp" },
+      { ml: 350, label: "350 ml jar", price: 295, image: "images/products/pineapple-salsa-350.webp" } ] },
+    { id: "mango-salsa", name: "Mango Salsa", notes: "Fruity, vibrant, delicious", sizes: [
+      { ml: 500, label: "500 ml jar", price: 485, image: "images/products/mango-salsa-500.webp" },
+      { ml: 350, label: "350 ml jar", price: 385, image: "images/products/mango-salsa-350.webp" } ] },
+    { id: "pickled-cucumber", name: "Pickled Cucumber", notes: "Crisp, refreshing, flavorful", sizes: [
+      { ml: 500, label: "500 ml jar", price: 355, image: "images/products/pickled-cucumber-500.webp" },
+      { ml: 350, label: "350 ml jar", price: 255, image: "images/products/pickled-cucumber-350.webp" } ] },
+    { id: "pickled-onion", name: "Pickled Onion", notes: "Zesty, crunchy, addictive", sizes: [
+      { ml: 350, label: "350 ml jar", price: 295, image: "images/products/pickled-onion-350.webp" },
+      { ml: 200, label: "200 ml jar", price: 225, image: "images/products/pickled-onion-200.webp" } ] },
+    { id: "pesto", name: "Pesto", notes: "Aromatic, rich, versatile", sizes: [
+      { ml: 350, label: "350 ml jar", price: 605, image: "images/products/pesto-350.webp" },
+      { ml: 200, label: "200 ml jar", price: 375, image: "images/products/pesto-200.webp" } ] },
+    { id: "mango-salad-dressing", name: "Mango Salad Dressing", notes: "Light, fruity, refreshing", sizes: [
+      { ml: 350, label: "350 ml bottle", price: 495, image: "images/products/mango-salad-dressing-350.webp" },
+      { ml: 150, label: "150 ml bottle", price: 325, image: "images/products/mango-salad-dressing-150.webp" } ] }
   ],
 
   gcash: {

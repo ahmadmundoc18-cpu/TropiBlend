@@ -46,9 +46,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="images/tropiblend-mango-salsa-cagayan-de-oro.jpg">
+  <link rel="preload" as="image" href="images/products/mango-salsa-duo.webp">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Structured data -->
@@ -70,6 +70,7 @@
         ],
         "telephone": "+63 956 447 9961",
         "email": "elsie@tropiblend.com",
+        "priceRange": "₱225–₱605",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Cagayan de Oro City",
@@ -99,12 +100,18 @@
         "@id": "https://tropiblend.com/#products",
         "name": "TropiBlend gourmet condiments",
         "itemListElement": [
-          { "@type": "Product", "name": "TropiBlend Pineapple Salsa", "category": "Salsa", "brand": { "@type": "Brand", "name": "TropiBlend" }, "size": "500 ml", "image": ["https://tropiblend.com/images/tropiblend-pineapple-salsa-cagayan-de-oro.jpg", "https://tropiblend.com/images/tropiblend-pineapple-salsa-guide.jpg"], "description": "Pineapple salsa made in Cagayan de Oro with pineapple, bell pepper, onion, lime, cane sugar, salt, pepper, herbs and spices." },
-          { "@type": "Product", "name": "TropiBlend Mango Salsa", "category": "Salsa", "brand": { "@type": "Brand", "name": "TropiBlend" }, "size": "500 ml", "image": ["https://tropiblend.com/images/tropiblend-mango-salsa-cagayan-de-oro.jpg", "https://tropiblend.com/images/tropiblend-mango-salsa-guide.jpg"], "description": "Mango salsa made in Cagayan de Oro with mango, bell pepper, onion, lime, cane sugar, salt, pepper, herbs and spices." },
-          { "@type": "Product", "name": "TropiBlend Pickled Cucumber", "category": "Pickles", "brand": { "@type": "Brand", "name": "TropiBlend" }, "size": "500 ml", "image": ["https://tropiblend.com/images/tropiblend-pickled-cucumber-cagayan-de-oro.jpg", "https://tropiblend.com/images/tropiblend-pickles-grilled-guide.jpg"], "description": "Pickled Japanese cucumber with dill, lime, cane sugar, salt, pepper, herbs and spices." },
-          { "@type": "Product", "name": "TropiBlend Pickled Onion", "category": "Pickles", "brand": { "@type": "Brand", "name": "TropiBlend" }, "size": "350 ml", "image": ["https://tropiblend.com/images/tropiblend-pickled-onion-cagayan-de-oro.jpg", "https://tropiblend.com/images/tropiblend-pickles-level-up-guide.jpg"], "description": "Bright, tangy pickled onion with cane sugar, salt, pepper, herbs and spices." },
-          { "@type": "Product", "name": "TropiBlend Pesto", "category": "Pesto", "brand": { "@type": "Brand", "name": "TropiBlend" }, "size": "300 ml", "image": ["https://tropiblend.com/images/tropiblend-pesto-cagayan-de-oro.jpg", "https://tropiblend.com/images/tropiblend-pesto-guide.jpg"], "description": "Basil pesto with parmesan cheese, extra virgin olive oil, cashew nuts, herbs and spices." },
-          { "@type": "Product", "name": "TropiBlend Mango Salad Dressing", "category": "Salad dressing", "brand": { "@type": "Brand", "name": "TropiBlend" }, "size": "350 ml", "image": "https://tropiblend.com/images/tropiblend-mango-salad-dressing-cagayan-de-oro.jpg", "description": "Mango salad dressing with mango, lime, cane sugar, salt, pepper, herbs and spices." }
+          { "@type": "Product", "name": "TropiBlend Pineapple Salsa", "category": "Salsa", "brand": { "@type": "Brand", "name": "TropiBlend" }, "image": "https://tropiblend.com/images/products/pineapple-salsa-duo.webp", "description": "Pineapple salsa made in Cagayan de Oro with pineapple, bell pepper, onion, vinegar, citrus, cane sugar, salt, select herbs and spices. Available in 500 ml and 350 ml jars.",
+            "offers": [ { "@type": "Offer", "name": "500 ml jar", "price": "385", "priceCurrency": "PHP" }, { "@type": "Offer", "name": "350 ml jar", "price": "295", "priceCurrency": "PHP" } ] },
+          { "@type": "Product", "name": "TropiBlend Mango Salsa", "category": "Salsa", "brand": { "@type": "Brand", "name": "TropiBlend" }, "image": "https://tropiblend.com/images/products/mango-salsa-duo.webp", "description": "Mango salsa made in Cagayan de Oro with mango, bell pepper, onion, vinegar, citrus, cane sugar, salt, select herbs and spices. Available in 500 ml and 350 ml jars.",
+            "offers": [ { "@type": "Offer", "name": "500 ml jar", "price": "485", "priceCurrency": "PHP" }, { "@type": "Offer", "name": "350 ml jar", "price": "385", "priceCurrency": "PHP" } ] },
+          { "@type": "Product", "name": "TropiBlend Pickled Cucumber", "category": "Pickles", "brand": { "@type": "Brand", "name": "TropiBlend" }, "image": "https://tropiblend.com/images/products/pickled-cucumber-duo.webp", "description": "Pickled Japanese cucumber with vinegar, water, cane sugar, salt, pepper, select herbs and spices. Available in 500 ml and 350 ml jars.",
+            "offers": [ { "@type": "Offer", "name": "500 ml jar", "price": "355", "priceCurrency": "PHP" }, { "@type": "Offer", "name": "350 ml jar", "price": "255", "priceCurrency": "PHP" } ] },
+          { "@type": "Product", "name": "TropiBlend Pickled Onion", "category": "Pickles", "brand": { "@type": "Brand", "name": "TropiBlend" }, "image": "https://tropiblend.com/images/products/pickled-onion-duo.webp", "description": "Bright, tangy pickled red onion with vinegar, water, cane sugar, salt, pepper, select herbs and spices. Available in 350 ml and 200 ml jars.",
+            "offers": [ { "@type": "Offer", "name": "350 ml jar", "price": "295", "priceCurrency": "PHP" }, { "@type": "Offer", "name": "200 ml jar", "price": "225", "priceCurrency": "PHP" } ] },
+          { "@type": "Product", "name": "TropiBlend Pesto", "category": "Pesto", "brand": { "@type": "Brand", "name": "TropiBlend" }, "image": "https://tropiblend.com/images/products/pesto-duo.webp", "description": "Basil pesto with parmesan cheese, extra virgin olive oil, sunflower oil, cashew nuts, salt, pepper and natural flavors. Available in 350 ml and 200 ml jars.",
+            "offers": [ { "@type": "Offer", "name": "350 ml jar", "price": "605", "priceCurrency": "PHP" }, { "@type": "Offer", "name": "200 ml jar", "price": "375", "priceCurrency": "PHP" } ] },
+          { "@type": "Product", "name": "TropiBlend Mango Salad Dressing", "category": "Salad dressing", "brand": { "@type": "Brand", "name": "TropiBlend" }, "image": "https://tropiblend.com/images/products/mango-salad-dressing-duo.webp", "description": "Mango salad dressing with mango, extra virgin olive oil, sunflower oil, vinegar, citrus, cane sugar, salt, select herbs and spices. Available in 350 ml and 150 ml bottles.",
+            "offers": [ { "@type": "Offer", "name": "350 ml bottle", "price": "495", "priceCurrency": "PHP" }, { "@type": "Offer", "name": "150 ml bottle", "price": "325", "priceCurrency": "PHP" } ] }
         ]
       },
       {
@@ -112,7 +119,8 @@
         "@id": "https://tropiblend.com/#faq",
         "mainEntity": [
           { "@type": "Question", "name": "Where can I buy TropiBlend in Cagayan de Oro?", "acceptedAnswer": { "@type": "Answer", "text": "Visit the TropiBlend booth at the MSME fair at SM CDO Downtown (starting September 9, 2026), or order directly by messaging TropiBlendph on Facebook, calling or texting 0956 447 9961, or emailing elsie@tropiblend.com." } },
-          { "@type": "Question", "name": "How do I order TropiBlend products?", "acceptedAnswer": { "@type": "Answer", "text": "Message TropiBlendph on Facebook, call or text 0956 447 9961, or email elsie@tropiblend.com with the products and quantities you want. We will confirm availability, price and pickup or delivery details in Cagayan de Oro." } },
+          { "@type": "Question", "name": "How do I order TropiBlend products?", "acceptedAnswer": { "@type": "Answer", "text": "Message TropiBlendph on Facebook, call or text 0956 447 9961, or email elsie@tropiblend.com with the products, sizes and quantities you want. We will confirm availability, price and pickup or delivery details in Cagayan de Oro." } },
+          { "@type": "Question", "name": "What sizes do TropiBlend products come in?", "acceptedAnswer": { "@type": "Answer", "text": "Every product comes in two sizes. Pineapple Salsa, Mango Salsa and Pickled Cucumber come in 500 ml and 350 ml jars; Pickled Onion and Pesto in 350 ml and 200 ml jars; and Mango Salad Dressing in 350 ml and 150 ml bottles. Prices range from ₱225 to ₱605." } },
           { "@type": "Question", "name": "Are TropiBlend products all natural?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every TropiBlend product is made from fresh and natural ingredients with no artificial preservatives. The full ingredient list is printed on each label." } },
           { "@type": "Question", "name": "Do any TropiBlend products contain allergens?", "acceptedAnswer": { "@type": "Answer", "text": "TropiBlend Pesto contains cashew nuts and parmesan cheese (dairy). Please check each product's ingredient list if you have food allergies." } },
           { "@type": "Question", "name": "What food goes well with TropiBlend?", "acceptedAnswer": { "@type": "Answer", "text": "Pair the salsas with chips, grilled fish and chicken; the pickles with grilled meats, fried chicken, burgers and rice meals; the pesto with pasta and toast; and the mango dressing with fresh green salads." } }
@@ -122,7 +130,7 @@
   }
   </script>
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============ Header ============ -->
@@ -162,217 +170,337 @@
 
   <main id="main">
 
-    <!-- ============ Hero ============ -->
-    <section class="hero" aria-labelledby="hero-title">
+    <!-- ============ Hero: flavor switcher ============ -->
+    <section class="hero" data-flavor="mango" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="script-accent">Fresh from nature. Made to share.</p>
-          <h1 id="hero-title">Gourmet salsas, pickles &amp; pesto, <em>made in Cagayan de Oro.</em></h1>
-          <p class="lead">TropiBlend is a Filipino food brand crafting small-batch condiments from fresh, natural ingredients. Bright, tangy and full of flavor, they turn everyday meals into something special.</p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="hero-line">Fresh from nature.</span>
+            <span class="hero-line hero-line-2">Made to share.</span>
+          </h1>
+          <p class="lead">Salsas, pickles, pesto and mango dressing, made in small batches in Cagayan de Oro from fresh, natural ingredients.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#products">Explore our products</a>
+            <a class="btn btn-primary btn-lg" href="shop.html">Shop all six</a>
             <a class="btn btn-ghost" href="https://m.me/TropiBlendph" target="_blank" rel="noopener">
               <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17V22l2.97-1.63c.84.23 1.73.36 2.66.36h.23c5.64 0 10-4.13 10-9.7S17.64 2 12 2zm1.03 12.97-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72-5.48 5.82z"/></svg>
               Order on Messenger
             </a>
           </div>
-          <ul class="hero-points" aria-label="What makes TropiBlend different">
-            <li>All-natural ingredients</li>
-            <li>No artificial preservatives</li>
-            <li>Locally crafted in CDO</li>
-          </ul>
         </div>
 
-        <div class="hero-media">
-          <figure class="hero-photo hero-photo-main">
-            <img src="images/tropiblend-mango-salsa-cagayan-de-oro.jpg" width="1086" height="1448"
-                 alt="A jar of TropiBlend Mango Salsa beside grilled salmon topped with fresh mango salsa, whole mangoes and limes"
-                 fetchpriority="high">
-          </figure>
-          <figure class="hero-photo hero-photo-small">
-            <img src="images/tropiblend-pineapple-salsa-cagayan-de-oro.jpg" width="1086" height="1448"
-                 alt="TropiBlend Pineapple Salsa jar with a bowl of salsa, tortilla chips and a whole pineapple"
-                 loading="lazy">
-          </figure>
-          <div class="hero-badge" aria-hidden="true">
-            <span>Proudly</span>
-            <strong>Kagay-anon</strong>
-            <span>made</span>
-          </div>
+        <div class="hero-stage">
+          <span class="hero-disc" aria-hidden="true"></span>
+          <svg class="hero-sticker" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="sticker-ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+            <circle cx="100" cy="100" r="97" class="sticker-bg"/>
+            <circle cx="100" cy="100" r="88" class="sticker-line"/>
+            <text class="sticker-text"><textPath href="#sticker-ring" textLength="448" lengthAdjust="spacing">Proudly Kagay-anon made ✦ Small batch ✦ All natural ✦ </textPath></text>
+            <image href="images/brand/tropiblend-monogram.svg" x="70" y="76" width="60" height="47"/>
+          </svg>
+          <img class="hero-jars" data-hero-img src="images/products/mango-salsa-duo.webp" width="1067" height="947"
+               alt="TropiBlend Mango Salsa in 500 ml and 350 ml jars" fetchpriority="high">
+          <a class="hero-flavor" data-hero-link href="shop.html#mango-salsa">
+            <span class="hero-flavor-name" data-hero-name>Mango Salsa</span>
+            <span class="hero-flavor-notes" data-hero-notes>Fruity, vibrant, delicious</span>
+            <span class="hero-flavor-price">from <strong data-hero-price>₱385</strong></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="flavor-tabs" role="group" aria-label="Show a flavor">
+          <button class="flavor-tab" type="button" aria-pressed="false" data-flavor="pineapple" data-product="pineapple-salsa" data-name="Pineapple Salsa" data-notes="Sweet, tangy, fresh" data-from="₱295" data-img="images/products/pineapple-salsa-duo.webp" data-w="1265" data-h="1000" data-alt="TropiBlend Pineapple Salsa in 500 ml and 350 ml jars">
+            <img src="images/products/pineapple-salsa-500.webp" alt="" width="593" height="900"><span>Pineapple Salsa</span>
+          </button>
+          <button class="flavor-tab" type="button" aria-pressed="true" data-flavor="mango" data-product="mango-salsa" data-name="Mango Salsa" data-notes="Fruity, vibrant, delicious" data-from="₱385" data-img="images/products/mango-salsa-duo.webp" data-w="1067" data-h="947" data-alt="TropiBlend Mango Salsa in 500 ml and 350 ml jars">
+            <img src="images/products/mango-salsa-500.webp" alt="" width="551" height="900"><span>Mango Salsa</span>
+          </button>
+          <button class="flavor-tab" type="button" aria-pressed="false" data-flavor="cucumber" data-product="pickled-cucumber" data-name="Pickled Cucumber" data-notes="Crisp, refreshing, flavorful" data-from="₱255" data-img="images/products/pickled-cucumber-duo.webp" data-w="1244" data-h="920" data-alt="TropiBlend Pickled Cucumber in 500 ml and 350 ml jars">
+            <img src="images/products/pickled-cucumber-500.webp" alt="" width="638" height="900"><span>Pickled Cucumber</span>
+          </button>
+          <button class="flavor-tab" type="button" aria-pressed="false" data-flavor="onion" data-product="pickled-onion" data-name="Pickled Onion" data-notes="Zesty, crunchy, addictive" data-from="₱225" data-img="images/products/pickled-onion-duo.webp" data-w="1274" data-h="1000" data-alt="TropiBlend Pickled Onion in 350 ml and 200 ml jars">
+            <img src="images/products/pickled-onion-350.webp" alt="" width="600" height="900"><span>Pickled Onion</span>
+          </button>
+          <button class="flavor-tab" type="button" aria-pressed="false" data-flavor="pesto" data-product="pesto" data-name="Pesto" data-notes="Aromatic, rich, versatile" data-from="₱375" data-img="images/products/pesto-duo.webp" data-w="1242" data-h="1000" data-alt="TropiBlend Pesto in 350 ml and 200 ml jars">
+            <img src="images/products/pesto-350.webp" alt="" width="621" height="900"><span>Pesto</span>
+          </button>
+          <button class="flavor-tab" type="button" aria-pressed="false" data-flavor="dressing" data-product="mango-salad-dressing" data-name="Mango Salad Dressing" data-notes="Light, fruity, refreshing" data-from="₱325" data-img="images/products/mango-salad-dressing-duo.webp" data-w="569" data-h="1000" data-alt="TropiBlend Mango Salad Dressing in 350 ml and 150 ml bottles">
+            <img src="images/products/mango-salad-dressing-350.webp" alt="" width="303" height="900"><span>Mango Dressing</span>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- ============ Trust strip ============ -->
-    <section class="trust" aria-label="Our promise">
-      <div class="container trust-inner">
-        <div class="trust-item">
-          <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 28V14M16 14c0-6 5-10 11-10 0 6-5 10-11 10zM16 18c0-5-4-8-9-8 0 5 4 8 9 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          <span><strong>All natural</strong> ingredients</span>
-        </div>
-        <div class="trust-item">
-          <svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="18" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 9c0-3 2-5 5-5M16 9c-1-2-3-3-5-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span><strong>Real fruits</strong> &amp; herbs</span>
-        </div>
-        <div class="trust-item">
-          <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11 4h10M12 4v8L6 25a2 2 0 0 0 2 3h16a2 2 0 0 0 2-3l-6-13V4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 5l22 22" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span><strong>No artificial</strong> preservatives</span>
-        </div>
-        <div class="trust-item">
-          <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 29s-9-8.5-9-15a9 9 0 0 1 18 0c0 6.5-9 15-9 15z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="14" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span><strong>Made in</strong> Cagayan de Oro</span>
-        </div>
+    <!-- ============ Ticker ============ -->
+    <section class="ticker" aria-label="What makes TropiBlend different">
+      <div class="ticker-track">
+        <ul class="ticker-list">
+          <li>All-natural ingredients</li>
+          <li>No artificial preservatives</li>
+          <li>Real fruit, real herbs</li>
+          <li>Small batch</li>
+          <li>Made in Cagayan de Oro</li>
+          <li>Two sizes of every jar</li>
+        </ul>
+        <ul class="ticker-list" aria-hidden="true">
+          <li>All-natural ingredients</li>
+          <li>No artificial preservatives</li>
+          <li>Real fruit, real herbs</li>
+          <li>Small batch</li>
+          <li>Made in Cagayan de Oro</li>
+          <li>Two sizes of every jar</li>
+        </ul>
       </div>
+      <button class="ticker-toggle" type="button" aria-pressed="false" data-ticker-toggle>
+        <span class="sr-only">Pause scrolling text</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" class="i-pause"><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" class="i-play"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+      </button>
     </section>
 
     <!-- ============ Products ============ -->
-    <section class="section products" id="products" aria-labelledby="products-title">
+    <section class="section collection" id="products" aria-labelledby="products-title">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">The TropiBlend collection</p>
-          <h2 id="products-title">Our gourmet condiments</h2>
-          <div class="leaf-rule" aria-hidden="true"><span></span><i class="leaf-mark"></i><span></span></div>
-          <p class="section-intro">Six small-batch favorites, each made from fresh, natural ingredients. Every jar lists its full ingredients on the label, and there's nothing artificial in any of them.</p>
+        <header class="split-head">
+          <h2 id="products-title">Six jars, <em>two sizes each.</em></h2>
+          <div class="split-head-side">
+            <p>Pick the big jar for the family table or the small one to try something new. Every label lists its full ingredients, and there's nothing artificial in any of them.</p>
+            <p class="split-head-links"><a class="text-link" href="shop.html">Open the shop</a> <button class="text-link" type="button" data-lightbox="images/tropiblend-price-list.webp" data-alt="TropiBlend price list for all six products and sizes">See the price list</button></p>
+          </div>
         </header>
 
-        <div class="filters" role="group" aria-label="Filter products">
-          <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-          <button class="chip" type="button" data-filter="salsa" aria-pressed="false">Salsas</button>
-          <button class="chip" type="button" data-filter="pickles" aria-pressed="false">Pickles</button>
-          <button class="chip" type="button" data-filter="pesto" aria-pressed="false">Pesto</button>
-          <button class="chip" type="button" data-filter="dressing" aria-pressed="false">Dressings</button>
-        </div>
-
         <ul class="product-grid">
-          <!-- Pineapple Salsa -->
-          <li class="product-card" data-category="salsa">
-            <article>
-              <div class="product-media">
-                <img src="images/tropiblend-pineapple-salsa-cagayan-de-oro.jpg" width="1086" height="1448" loading="lazy"
-                     alt="TropiBlend Pineapple Salsa, 500 ml jar, with a bowl of pineapple salsa, tortilla chips, lime and cilantro">
+          <li class="product-card" id="pineapple-salsa" data-category="salsa">
+            <article class="pcard" data-product="pineapple-salsa" data-flavor="pineapple">
+              <div class="pcard-media">
+                <span class="pcard-disc" aria-hidden="true"></span>
+                <img data-size-img src="images/products/pineapple-salsa-500.webp" width="593" height="900" loading="lazy" alt="TropiBlend Pineapple Salsa, 500 ml jar">
+                <span class="pcard-badge" aria-hidden="true" data-size-badge>500<small>ml</small></span>
                 <span class="tag">Salsa</span>
               </div>
-              <div class="product-body">
-                <h3 class="product-name">Pineapple Salsa</h3>
-                <p class="product-size">500 ml jar</p>
-                <p>Sweet pineapple with crisp bell pepper and onion, brightened with lime. Scoop it up with chips or spoon it over grilled pork and fish.</p>
-                <p class="pairs"><span>Best with:</span> chips, grilled pork, fish, tacos</p>
+              <div class="pcard-body">
+                <h3 class="pcard-name">Pineapple Salsa</h3>
+                <p class="pcard-notes">Sweet, tangy, fresh</p>
+                <p class="pcard-desc">Sweet pineapple with crisp bell pepper and onion, brightened with citrus. Scoop it up with chips or spoon it over grilled pork and fish.</p>
+                <fieldset class="sizes">
+                  <legend class="sr-only">Size of Pineapple Salsa</legend>
+                  <label class="size">
+                    <input type="radio" name="size-pineapple-salsa" value="500" data-size data-img="images/products/pineapple-salsa-500.webp" data-alt="TropiBlend Pineapple Salsa, 500 ml jar" checked>
+                    <span class="size-ml">500 ml</span>
+                    <span class="size-price" data-price-for="pineapple-salsa-500">₱385</span>
+                  </label>
+                  <label class="size">
+                    <input type="radio" name="size-pineapple-salsa" value="350" data-size data-img="images/products/pineapple-salsa-350.webp" data-alt="TropiBlend Pineapple Salsa, 350 ml jar">
+                    <span class="size-ml">350 ml</span>
+                    <span class="size-price" data-price-for="pineapple-salsa-350">₱295</span>
+                  </label>
+                </fieldset>
+                <div class="buy-row" data-buy data-shop-on hidden>
+                  <div class="qty" role="group" aria-label="Quantity of Pineapple Salsa"><button type="button" data-step="-1" aria-label="One less">−</button><input type="number" value="1" min="1" max="50" inputmode="numeric" data-add-qty aria-label="Quantity"><button type="button" data-step="1" aria-label="One more">+</button></div>
+                  <button class="btn btn-primary add-to-cart" type="button"><span class="add-label">Add to cart</span><span class="add-done" aria-hidden="true">Added</span></button>
+                </div>
+                <a class="btn btn-primary btn-block" data-shop-off href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Order on Messenger</a>
                 <details class="ingredients">
-                  <summary>Ingredients</summary>
-                  <p>Pineapple, bell pepper, onion, lime, cane sugar, salt, pepper, herbs and spices.</p>
+                  <summary>Ingredients &amp; pairings</summary>
+                  <p>Pineapple, bell pepper, onion, vinegar, citrus, cane sugar, salt, select herbs and spices.</p>
+                  <p class="pairs"><strong>Best with:</strong> chips, grilled pork, fish, tacos</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pineapple-salsa" data-product="Pineapple Salsa (500 ml)">Order Pineapple Salsa</button>
               </div>
             </article>
           </li>
 
-          <!-- Mango Salsa -->
-          <li class="product-card" data-category="salsa">
-            <article>
-              <div class="product-media">
-                <img src="images/tropiblend-mango-salsa-cagayan-de-oro.jpg" width="1086" height="1448" loading="lazy"
-                     alt="TropiBlend Mango Salsa, 500 ml jar, next to grilled salmon topped with mango salsa">
+          <li class="product-card" id="mango-salsa" data-category="salsa">
+            <article class="pcard" data-product="mango-salsa" data-flavor="mango">
+              <div class="pcard-media">
+                <span class="pcard-disc" aria-hidden="true"></span>
+                <img data-size-img src="images/products/mango-salsa-500.webp" width="551" height="900" loading="lazy" alt="TropiBlend Mango Salsa, 500 ml jar">
+                <span class="pcard-badge" aria-hidden="true" data-size-badge>500<small>ml</small></span>
                 <span class="tag">Salsa</span>
               </div>
-              <div class="product-body">
-                <h3 class="product-name">Mango Salsa</h3>
-                <p class="product-size">500 ml jar</p>
-                <p>Ripe mango with bell pepper, onion and a squeeze of lime. It's a sweet and tangy topping for grilled salmon, chicken and seafood.</p>
-                <p class="pairs"><span>Best with:</span> grilled fish, chicken, seafood, chips</p>
+              <div class="pcard-body">
+                <h3 class="pcard-name">Mango Salsa</h3>
+                <p class="pcard-notes">Fruity, vibrant, delicious</p>
+                <p class="pcard-desc">Ripe mango with bell pepper, onion and a squeeze of citrus. A sweet and tangy topping for grilled salmon, chicken and seafood.</p>
+                <fieldset class="sizes">
+                  <legend class="sr-only">Size of Mango Salsa</legend>
+                  <label class="size">
+                    <input type="radio" name="size-mango-salsa" value="500" data-size data-img="images/products/mango-salsa-500.webp" data-alt="TropiBlend Mango Salsa, 500 ml jar" checked>
+                    <span class="size-ml">500 ml</span>
+                    <span class="size-price" data-price-for="mango-salsa-500">₱485</span>
+                  </label>
+                  <label class="size">
+                    <input type="radio" name="size-mango-salsa" value="350" data-size data-img="images/products/mango-salsa-350.webp" data-alt="TropiBlend Mango Salsa, 350 ml jar">
+                    <span class="size-ml">350 ml</span>
+                    <span class="size-price" data-price-for="mango-salsa-350">₱385</span>
+                  </label>
+                </fieldset>
+                <div class="buy-row" data-buy data-shop-on hidden>
+                  <div class="qty" role="group" aria-label="Quantity of Mango Salsa"><button type="button" data-step="-1" aria-label="One less">−</button><input type="number" value="1" min="1" max="50" inputmode="numeric" data-add-qty aria-label="Quantity"><button type="button" data-step="1" aria-label="One more">+</button></div>
+                  <button class="btn btn-primary add-to-cart" type="button"><span class="add-label">Add to cart</span><span class="add-done" aria-hidden="true">Added</span></button>
+                </div>
+                <a class="btn btn-primary btn-block" data-shop-off href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Order on Messenger</a>
                 <details class="ingredients">
-                  <summary>Ingredients</summary>
-                  <p>Mango, bell pepper, onion, lime, cane sugar, salt, pepper, herbs and spices.</p>
+                  <summary>Ingredients &amp; pairings</summary>
+                  <p>Mango, bell pepper, onion, vinegar, citrus, cane sugar, salt, select herbs and spices.</p>
+                  <p class="pairs"><strong>Best with:</strong> grilled fish, chicken, seafood, chips</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-id="mango-salsa" data-product="Mango Salsa (500 ml)">Order Mango Salsa</button>
               </div>
             </article>
           </li>
 
-          <!-- Pickled Cucumber -->
-          <li class="product-card" data-category="pickles">
-            <article>
-              <div class="product-media">
-                <img src="images/tropiblend-pickled-cucumber-cagayan-de-oro.jpg" width="1402" height="1122" loading="lazy"
-                     alt="TropiBlend Pickled Cucumber jar served with grilled chicken, rice and a bowl of pickled cucumber on banana leaf">
+          <li class="product-card" id="pickled-cucumber" data-category="pickles">
+            <article class="pcard" data-product="pickled-cucumber" data-flavor="cucumber">
+              <div class="pcard-media">
+                <span class="pcard-disc" aria-hidden="true"></span>
+                <img data-size-img src="images/products/pickled-cucumber-500.webp" width="638" height="900" loading="lazy" alt="TropiBlend Pickled Cucumber, 500 ml jar">
+                <span class="pcard-badge" aria-hidden="true" data-size-badge>500<small>ml</small></span>
                 <span class="tag">Pickles</span>
               </div>
-              <div class="product-body">
-                <h3 class="product-name">Pickled Cucumber</h3>
-                <p class="product-size">500 ml jar</p>
-                <p>Crunchy Japanese cucumber pickled with dill and lime. It's a cool, bright side for inihaw, lechon manok and rice meals.</p>
-                <p class="pairs"><span>Best with:</span> grilled chicken, burgers, rice meals</p>
+              <div class="pcard-body">
+                <h3 class="pcard-name">Pickled Cucumber</h3>
+                <p class="pcard-notes">Crisp, refreshing, flavorful</p>
+                <p class="pcard-desc">Crunchy Japanese cucumber in a bright, tangy brine. A cool side for inihaw, lechon manok and rice meals.</p>
+                <fieldset class="sizes">
+                  <legend class="sr-only">Size of Pickled Cucumber</legend>
+                  <label class="size">
+                    <input type="radio" name="size-pickled-cucumber" value="500" data-size data-img="images/products/pickled-cucumber-500.webp" data-alt="TropiBlend Pickled Cucumber, 500 ml jar" checked>
+                    <span class="size-ml">500 ml</span>
+                    <span class="size-price" data-price-for="pickled-cucumber-500">₱355</span>
+                  </label>
+                  <label class="size">
+                    <input type="radio" name="size-pickled-cucumber" value="350" data-size data-img="images/products/pickled-cucumber-350.webp" data-alt="TropiBlend Pickled Cucumber, 350 ml jar">
+                    <span class="size-ml">350 ml</span>
+                    <span class="size-price" data-price-for="pickled-cucumber-350">₱255</span>
+                  </label>
+                </fieldset>
+                <div class="buy-row" data-buy data-shop-on hidden>
+                  <div class="qty" role="group" aria-label="Quantity of Pickled Cucumber"><button type="button" data-step="-1" aria-label="One less">−</button><input type="number" value="1" min="1" max="50" inputmode="numeric" data-add-qty aria-label="Quantity"><button type="button" data-step="1" aria-label="One more">+</button></div>
+                  <button class="btn btn-primary add-to-cart" type="button"><span class="add-label">Add to cart</span><span class="add-done" aria-hidden="true">Added</span></button>
+                </div>
+                <a class="btn btn-primary btn-block" data-shop-off href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Order on Messenger</a>
                 <details class="ingredients">
-                  <summary>Ingredients</summary>
-                  <p>Japanese cucumber, dill, lime, cane sugar, salt, pepper, herbs and spices.</p>
+                  <summary>Ingredients &amp; pairings</summary>
+                  <p>Japanese cucumber, vinegar, water, cane sugar, salt, pepper, select herbs and spices.</p>
+                  <p class="pairs"><strong>Best with:</strong> grilled chicken, burgers, rice meals</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pickled-cucumber" data-product="Pickled Cucumber (500 ml)">Order Pickled Cucumber</button>
               </div>
             </article>
           </li>
 
-          <!-- Pickled Onion -->
-          <li class="product-card" data-category="pickles">
-            <article>
-              <div class="product-media">
-                <img src="images/tropiblend-pickled-onion-cagayan-de-oro.jpg" width="1086" height="1448" loading="lazy"
-                     alt="TropiBlend Pickled Onion, 350 ml jar of bright pink pickled onion rings, with grilled meats and a burger">
-                <span class="tag tag-berry">Pickles</span>
+          <li class="product-card" id="pickled-onion" data-category="pickles">
+            <article class="pcard" data-product="pickled-onion" data-flavor="onion">
+              <div class="pcard-media">
+                <span class="pcard-disc" aria-hidden="true"></span>
+                <img data-size-img src="images/products/pickled-onion-350.webp" width="600" height="900" loading="lazy" alt="TropiBlend Pickled Onion, 350 ml jar">
+                <span class="pcard-badge" aria-hidden="true" data-size-badge>350<small>ml</small></span>
+                <span class="tag">Pickles</span>
               </div>
-              <div class="product-body">
-                <h3 class="product-name">Pickled Onion</h3>
-                <p class="product-size">350 ml jar</p>
-                <p>Bright, tangy pink onion rings with a zesty kick. They're the perfect condiment for every bite.</p>
-                <p class="pairs"><span>Best with:</span> grilled meats, fried chicken, burgers, sandwiches, tacos</p>
+              <div class="pcard-body">
+                <h3 class="pcard-name">Pickled Onion</h3>
+                <p class="pcard-notes">Zesty, crunchy, addictive</p>
+                <p class="pcard-desc">Tangy pink red onion with a zesty kick. The perfect condiment for every bite.</p>
+                <fieldset class="sizes">
+                  <legend class="sr-only">Size of Pickled Onion</legend>
+                  <label class="size">
+                    <input type="radio" name="size-pickled-onion" value="350" data-size data-img="images/products/pickled-onion-350.webp" data-alt="TropiBlend Pickled Onion, 350 ml jar" checked>
+                    <span class="size-ml">350 ml</span>
+                    <span class="size-price" data-price-for="pickled-onion-350">₱295</span>
+                  </label>
+                  <label class="size">
+                    <input type="radio" name="size-pickled-onion" value="200" data-size data-img="images/products/pickled-onion-200.webp" data-alt="TropiBlend Pickled Onion, 200 ml jar">
+                    <span class="size-ml">200 ml</span>
+                    <span class="size-price" data-price-for="pickled-onion-200">₱225</span>
+                  </label>
+                </fieldset>
+                <div class="buy-row" data-buy data-shop-on hidden>
+                  <div class="qty" role="group" aria-label="Quantity of Pickled Onion"><button type="button" data-step="-1" aria-label="One less">−</button><input type="number" value="1" min="1" max="50" inputmode="numeric" data-add-qty aria-label="Quantity"><button type="button" data-step="1" aria-label="One more">+</button></div>
+                  <button class="btn btn-primary add-to-cart" type="button"><span class="add-label">Add to cart</span><span class="add-done" aria-hidden="true">Added</span></button>
+                </div>
+                <a class="btn btn-primary btn-block" data-shop-off href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Order on Messenger</a>
                 <details class="ingredients">
-                  <summary>Ingredients</summary>
-                  <p>Onion, cane sugar, salt, pepper, herbs and spices.</p>
+                  <summary>Ingredients &amp; pairings</summary>
+                  <p>Red onion, vinegar, water, cane sugar, salt, pepper, select herbs and spices.</p>
+                  <p class="pairs"><strong>Best with:</strong> grilled meats, fried chicken, burgers, sandwiches, tacos</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pickled-onion" data-product="Pickled Onion (350 ml)">Order Pickled Onion</button>
               </div>
             </article>
           </li>
 
-          <!-- Pesto -->
-          <li class="product-card" data-category="pesto">
-            <article>
-              <div class="product-media">
-                <img src="images/tropiblend-pesto-cagayan-de-oro.jpg" width="1121" height="1403" loading="lazy"
-                     alt="TropiBlend Pesto jar on a table with pesto pasta and bruschetta topped with tomato and basil">
+          <li class="product-card" id="pesto" data-category="pesto">
+            <article class="pcard" data-product="pesto" data-flavor="pesto">
+              <div class="pcard-media">
+                <span class="pcard-disc" aria-hidden="true"></span>
+                <img data-size-img src="images/products/pesto-350.webp" width="621" height="900" loading="lazy" alt="TropiBlend Pesto, 350 ml jar">
+                <span class="pcard-badge" aria-hidden="true" data-size-badge>350<small>ml</small></span>
                 <span class="tag">Pesto</span>
               </div>
-              <div class="product-body">
-                <h3 class="product-name">Pesto</h3>
-                <p class="product-size">300 ml jar</p>
-                <p>Fragrant basil blended with parmesan, extra virgin olive oil and cashew nuts. Toss it with pasta, spread it on toast or spoon it over grilled meats.</p>
-                <p class="pairs"><span>Best with:</span> pasta, bread, grilled meats</p>
+              <div class="pcard-body">
+                <h3 class="pcard-name">Pesto</h3>
+                <p class="pcard-notes">Aromatic, rich, versatile</p>
+                <p class="pcard-desc">Fragrant basil blended with parmesan, extra virgin olive oil and cashew nuts. Toss it with pasta, spread it on toast or spoon it over grilled meats.</p>
+                <fieldset class="sizes">
+                  <legend class="sr-only">Size of Pesto</legend>
+                  <label class="size">
+                    <input type="radio" name="size-pesto" value="350" data-size data-img="images/products/pesto-350.webp" data-alt="TropiBlend Pesto, 350 ml jar" checked>
+                    <span class="size-ml">350 ml</span>
+                    <span class="size-price" data-price-for="pesto-350">₱605</span>
+                  </label>
+                  <label class="size">
+                    <input type="radio" name="size-pesto" value="200" data-size data-img="images/products/pesto-200.webp" data-alt="TropiBlend Pesto, 200 ml jar">
+                    <span class="size-ml">200 ml</span>
+                    <span class="size-price" data-price-for="pesto-200">₱375</span>
+                  </label>
+                </fieldset>
+                <div class="buy-row" data-buy data-shop-on hidden>
+                  <div class="qty" role="group" aria-label="Quantity of Pesto"><button type="button" data-step="-1" aria-label="One less">−</button><input type="number" value="1" min="1" max="50" inputmode="numeric" data-add-qty aria-label="Quantity"><button type="button" data-step="1" aria-label="One more">+</button></div>
+                  <button class="btn btn-primary add-to-cart" type="button"><span class="add-label">Add to cart</span><span class="add-done" aria-hidden="true">Added</span></button>
+                </div>
+                <a class="btn btn-primary btn-block" data-shop-off href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Order on Messenger</a>
                 <details class="ingredients">
-                  <summary>Ingredients</summary>
-                  <p>Basil, parmesan cheese, extra virgin olive oil, cashew nuts, herbs and spices.</p>
+                  <summary>Ingredients &amp; pairings</summary>
+                  <p>Basil, parmesan cheese, extra virgin olive oil, sunflower oil, cashew nuts, salt, pepper and natural flavors.</p>
                   <p class="allergen"><strong>Contains:</strong> tree nuts (cashew) and dairy.</p>
+                  <p class="pairs"><strong>Best with:</strong> pasta, bread, grilled meats</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-id="pesto" data-product="Pesto (300 ml)">Order Pesto</button>
               </div>
             </article>
           </li>
 
-          <!-- Mango Salad Dressing -->
-          <li class="product-card" data-category="dressing">
-            <article>
-              <div class="product-media">
-                <img src="images/tropiblend-mango-salad-dressing-cagayan-de-oro.jpg" width="1086" height="1448" loading="lazy"
-                     alt="TropiBlend Mango Salad Dressing being poured over a fresh green salad with avocado">
-                <span class="tag tag-mango">Dressing</span>
+          <li class="product-card" id="mango-salad-dressing" data-category="dressing">
+            <article class="pcard" data-product="mango-salad-dressing" data-flavor="dressing">
+              <div class="pcard-media">
+                <span class="pcard-disc" aria-hidden="true"></span>
+                <img data-size-img src="images/products/mango-salad-dressing-350.webp" width="303" height="900" loading="lazy" alt="TropiBlend Mango Salad Dressing, 350 ml bottle">
+                <span class="pcard-badge" aria-hidden="true" data-size-badge>350<small>ml</small></span>
+                <span class="tag">Dressing</span>
               </div>
-              <div class="product-body">
-                <h3 class="product-name">Mango Salad Dressing</h3>
-                <p class="product-size">350 ml bottle</p>
-                <p>Silky mango and lime with a gentle pepper finish. It brings sunshine to green salads, avocado and grilled chicken bowls.</p>
-                <p class="pairs"><span>Best with:</span> green salads, avocado, chicken bowls</p>
+              <div class="pcard-body">
+                <h3 class="pcard-name">Mango Salad Dressing</h3>
+                <p class="pcard-notes">Light, fruity, refreshing</p>
+                <p class="pcard-desc">Silky mango with olive oil and citrus. It brings sunshine to green salads, avocado and grilled chicken bowls.</p>
+                <fieldset class="sizes">
+                  <legend class="sr-only">Size of Mango Salad Dressing</legend>
+                  <label class="size">
+                    <input type="radio" name="size-mango-salad-dressing" value="350" data-size data-img="images/products/mango-salad-dressing-350.webp" data-alt="TropiBlend Mango Salad Dressing, 350 ml bottle" checked>
+                    <span class="size-ml">350 ml</span>
+                    <span class="size-price" data-price-for="mango-salad-dressing-350">₱495</span>
+                  </label>
+                  <label class="size">
+                    <input type="radio" name="size-mango-salad-dressing" value="150" data-size data-img="images/products/mango-salad-dressing-150.webp" data-alt="TropiBlend Mango Salad Dressing, 150 ml bottle">
+                    <span class="size-ml">150 ml</span>
+                    <span class="size-price" data-price-for="mango-salad-dressing-150">₱325</span>
+                  </label>
+                </fieldset>
+                <div class="buy-row" data-buy data-shop-on hidden>
+                  <div class="qty" role="group" aria-label="Quantity of Mango Salad Dressing"><button type="button" data-step="-1" aria-label="One less">−</button><input type="number" value="1" min="1" max="50" inputmode="numeric" data-add-qty aria-label="Quantity"><button type="button" data-step="1" aria-label="One more">+</button></div>
+                  <button class="btn btn-primary add-to-cart" type="button"><span class="add-label">Add to cart</span><span class="add-done" aria-hidden="true">Added</span></button>
+                </div>
+                <a class="btn btn-primary btn-block" data-shop-off href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Order on Messenger</a>
                 <details class="ingredients">
-                  <summary>Ingredients</summary>
-                  <p>Mango, lime, cane sugar, salt, pepper, herbs and spices.</p>
+                  <summary>Ingredients &amp; pairings</summary>
+                  <p>Mango, extra virgin olive oil, sunflower oil, vinegar, citrus, cane sugar, salt, select herbs and spices.</p>
+                  <p class="pairs"><strong>Best with:</strong> green salads, avocado, chicken bowls</p>
                 </details>
-                <button class="btn btn-primary btn-block order-btn" type="button" data-id="mango-salad-dressing" data-product="Mango Salad Dressing (350 ml)">Order Mango Dressing</button>
               </div>
             </article>
           </li>
@@ -380,165 +508,150 @@
       </div>
     </section>
 
-    <!-- ============ Line-up banner ============ -->
-    <section class="lineup" aria-label="The full TropiBlend range">
-      <div class="container">
-        <figure class="lineup-figure">
-          <img src="images/tropiblend-product-lineup.jpg" width="1774" height="887" loading="lazy"
-               alt="The full TropiBlend line-up on a wooden table: Pineapple Salsa, Mango Salsa, Pickled Cucumber, Pickled Onion, Pesto and Mango Salad Dressing">
-        </figure>
-      </div>
-    </section>
-
     <!-- ============ How to enjoy ============ -->
     <section class="section enjoy" id="enjoy" aria-labelledby="enjoy-title">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Serving ideas</p>
-          <h2 id="enjoy-title">How to enjoy TropiBlend</h2>
-          <div class="leaf-rule" aria-hidden="true"><span></span><i class="leaf-mark"></i><span></span></div>
-          <p class="section-intro">Easy ways to level up everyday meals at home, whether it's baon, a barkada get-together or Sunday lunch.</p>
+        <header class="split-head">
+          <h2 id="enjoy-title">The TropiBlend <em>effect.</em></h2>
+          <div class="split-head-side">
+            <p>Easy ways to level up everyday meals at home, whether it's baon, a barkada get-together or Sunday lunch. Tap a guide to see the full poster.</p>
+            <div class="rail-nav">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous guides"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next guides"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
         </header>
+      </div>
 
-        <div class="recipe recipe-wide">
-          <button class="recipe-media" type="button" data-lightbox="images/tropiblend-pickles-level-up-guide.jpg"
+      <div class="rail" data-rail tabindex="0" role="region" aria-label="Serving guides">
+        <article class="guide" data-flavor="onion">
+          <button class="guide-media" type="button" data-lightbox="images/tropiblend-pickles-level-up-guide.jpg"
                   data-alt="TropiBlend guide: Level up every bite with Pickled Cucumber and Pickled Onion on a burger">
             <img src="images/tropiblend-pickles-level-up-guide.jpg" width="1490" height="1055" loading="lazy"
                  alt="TropiBlend guide: level up every bite by adding Pickled Cucumber and Pickled Onion to your burger">
-            <span class="zoom-hint">View full guide</span>
+            <span class="zoom-hint">View guide</span>
           </button>
-          <div class="recipe-body">
-            <p class="script-accent berry">Level up every bite!</p>
+          <div class="guide-body">
+            <p class="guide-kicker">Level up every bite</p>
             <h3>The TropiBlend burger &amp; sandwich</h3>
-            <p>The secret to a next-level sandwich or burger is simple.</p>
             <ol class="steps">
-              <li><span>1</span>Start with your favorite bread.</li>
-              <li><span>2</span>Add fresh lettuce and tomatoes (optional).</li>
-              <li><span>3</span>Add your perfectly cooked meat.</li>
-              <li class="step-magic"><span>4</span>Now add the magic: <strong>TropiBlend Pickled Cucumber &amp; Pickled Onion.</strong></li>
+              <li>Start with your favorite bread.</li>
+              <li>Add fresh lettuce and tomatoes, if you like.</li>
+              <li>Add your perfectly cooked meat.</li>
+              <li>Now the magic: <strong>Pickled Cucumber &amp; Pickled Onion.</strong></li>
             </ol>
-            <p class="quote">That crunch. That zing. That perfect balance. <em>That's the TropiBlend effect.</em></p>
           </div>
-        </div>
+        </article>
 
-        <div class="recipe recipe-wide recipe-reverse">
-          <button class="recipe-media" type="button" data-lightbox="images/tropiblend-pickles-grilled-guide.jpg"
+        <article class="guide" data-flavor="cucumber">
+          <button class="guide-media" type="button" data-lightbox="images/tropiblend-pickles-grilled-guide.jpg"
                   data-alt="TropiBlend guide: Pickled Cucumber and Onions, the perfect pair for grilled favorites">
             <img src="images/tropiblend-pickles-grilled-guide.jpg" width="1490" height="1055" loading="lazy"
-                 alt="TropiBlend Pickled Cucumber and Pickled Onion jars with grilled fish and grilled chicken topped with pickles">
-            <span class="zoom-hint">View full guide</span>
+                 alt="TropiBlend guide: Pickled Cucumber and Pickled Onion, the perfect pair for grilled fish and grilled chicken">
+            <span class="zoom-hint">View guide</span>
           </button>
-          <div class="recipe-body">
-            <p class="script-accent">Simple ingredients. Big flavor.</p>
-            <h3>The perfect pair for grilled favorites</h3>
-            <p>Pickled Cucumber and Pickled Onion cut through smoky, savory inihaw.</p>
+          <div class="guide-body">
+            <p class="guide-kicker">Simple ingredients, big flavor</p>
+            <h3>The perfect pair for inihaw</h3>
             <ol class="steps">
-              <li><span>1</span><strong>Grilled fish.</strong> Pile cucumber and pink onion rings over inihaw na isda.</li>
-              <li><span>2</span><strong>Grilled chicken.</strong> A cool, tangy side for chicken inasal or lechon manok.</li>
-              <li><span>3</span><strong>Mix them together.</strong> Toss both in a bowl for a quick, crunchy side salad.</li>
+              <li><strong>Grilled fish.</strong> Pile cucumber and pink onion over inihaw na isda.</li>
+              <li><strong>Grilled chicken.</strong> A cool, tangy side for inasal or lechon manok.</li>
+              <li><strong>Mix them.</strong> Toss both in a bowl for a quick, crunchy side salad.</li>
             </ol>
           </div>
-        </div>
+        </article>
 
-        <div class="recipe recipe-wide">
-          <button class="recipe-media" type="button" data-lightbox="images/tropiblend-pesto-guide.jpg"
+        <article class="guide" data-flavor="pesto">
+          <button class="guide-media" type="button" data-lightbox="images/tropiblend-pesto-guide.jpg"
                   data-alt="TropiBlend guide: Pesto made with real basil. Pesto pasta, pesto toast and pesto on grilled meats and vegetables">
             <img src="images/tropiblend-pesto-guide.jpg" width="1490" height="1055" loading="lazy"
-                 alt="TropiBlend Pesto jar beside pesto pasta, pesto toast with fried egg, and grilled chicken with pesto and tomatoes">
-            <span class="zoom-hint">View full guide</span>
+                 alt="TropiBlend Pesto guide: pesto pasta, pesto toast, and pesto on grilled meats and vegetables">
+            <span class="zoom-hint">View guide</span>
           </button>
-          <div class="recipe-body">
-            <p class="script-accent">Made with real basil.</p>
-            <h3>3 ways with Pesto</h3>
-            <p>One jar, three easy meals.</p>
+          <div class="guide-body">
+            <p class="guide-kicker">Made with real basil</p>
+            <h3>Three ways with Pesto</h3>
             <ol class="steps">
-              <li><span>1</span><strong>Pesto pasta.</strong> Toss with hot pasta and top with grated cheese.</li>
-              <li><span>2</span><strong>Pesto toast.</strong> Spread on toast and crown it with a fried egg.</li>
-              <li><span>3</span><strong>Grilled meats &amp; vegetables.</strong> Spoon over chicken, pork or veggies hot off the grill.</li>
+              <li><strong>Pesto pasta.</strong> Toss with hot pasta and top with grated cheese.</li>
+              <li><strong>Pesto toast.</strong> Spread on toast and crown it with a fried egg.</li>
+              <li><strong>Off the grill.</strong> Spoon over chicken, pork or veggies.</li>
             </ol>
           </div>
-        </div>
+        </article>
 
-        <div class="recipe recipe-reverse">
-          <button class="recipe-media" type="button" data-lightbox="images/tropiblend-pesto-toast-guide.jpg"
+        <article class="guide guide-tall" data-flavor="pesto">
+          <button class="guide-media" type="button" data-lightbox="images/tropiblend-pesto-toast-guide.jpg"
                   data-alt="TropiBlend guide: Pesto made simple. Toast, spread and enjoy">
             <img src="images/tropiblend-pesto-toast-guide.jpg" width="1024" height="1536" loading="lazy"
                  alt="TropiBlend guide: pesto made simple. Toast your bread, spread the pesto, add toppings and enjoy">
-            <span class="zoom-hint">View full guide</span>
+            <span class="zoom-hint">View guide</span>
           </button>
-          <div class="recipe-body">
-            <p class="script-accent">Toast. Spread. Enjoy!</p>
+          <div class="guide-body">
+            <p class="guide-kicker">Toast, spread, enjoy</p>
             <h3>Pesto made simple</h3>
-            <p>A flavorful, easy way to elevate your everyday bread.</p>
             <ol class="steps">
-              <li><span>1</span>Toast your favorite bread.</li>
-              <li><span>2</span>Spread a generous layer of <strong>TropiBlend Pesto</strong>.</li>
-              <li><span>3</span>Add your favorite toppings, like tomatoes, cheese or basil.</li>
-              <li><span>4</span>Enjoy all that herby goodness!</li>
+              <li>Toast your favorite bread.</li>
+              <li>Spread on a generous layer of <strong>TropiBlend Pesto</strong>.</li>
+              <li>Add tomatoes, cheese or basil, and enjoy.</li>
             </ol>
-            <p class="quote">Also perfect for pasta, grilled meats and more.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="recipe recipe-wide">
-          <button class="recipe-media" type="button" data-lightbox="images/tropiblend-mango-salsa-guide.jpg"
+        <article class="guide" data-flavor="mango">
+          <button class="guide-media" type="button" data-lightbox="images/tropiblend-mango-salsa-guide.jpg"
                   data-alt="TropiBlend guide: Mango Salsa. Sweet, zesty, versatile. Top your seafood, make it a taco, brighten your salad">
             <img src="images/tropiblend-mango-salsa-guide.jpg" width="1490" height="1055" loading="lazy"
-                 alt="TropiBlend Mango Salsa guide: spooned over grilled shrimp, folded into chicken tacos and tossed on a grilled chicken salad">
-            <span class="zoom-hint">View full guide</span>
+                 alt="TropiBlend Mango Salsa guide: top your seafood, make it a taco, brighten your salad">
+            <span class="zoom-hint">View guide</span>
           </button>
-          <div class="recipe-body">
-            <p class="script-accent">Sweet. Zesty. Versatile.</p>
-            <h3>3 ways with Mango Salsa</h3>
-            <p>A burst of tropical goodness in every bite.</p>
+          <div class="guide-body">
+            <p class="guide-kicker">Sweet, zesty, versatile</p>
+            <h3>Three ways with Mango Salsa</h3>
             <ol class="steps">
-              <li><span>1</span><strong>Top your seafood.</strong> Add a tropical twist to grilled shrimp, fish or seafood.</li>
-              <li><span>2</span><strong>Make it a taco.</strong> Perfect with chicken, pork or fish tacos.</li>
-              <li><span>3</span><strong>Brighten your salad.</strong> Turn any salad into a flavorful, satisfying meal.</li>
+              <li><strong>Top your seafood.</strong> A tropical twist for grilled shrimp or fish.</li>
+              <li><strong>Make it a taco.</strong> Perfect with chicken, pork or fish tacos.</li>
+              <li><strong>Brighten a salad.</strong> Turn any salad into a satisfying meal.</li>
             </ol>
           </div>
-        </div>
+        </article>
 
-        <div class="recipe recipe-wide recipe-reverse">
-          <button class="recipe-media" type="button" data-lightbox="images/tropiblend-pineapple-salsa-guide.jpg"
+        <article class="guide" data-flavor="pineapple">
+          <button class="guide-media" type="button" data-lightbox="images/tropiblend-pineapple-salsa-guide.jpg"
                   data-alt="TropiBlend guide: 3 delicious ways to enjoy Pineapple Salsa. On grilled fish, with tacos and as a dip">
             <img src="images/tropiblend-pineapple-salsa-guide.jpg" width="1490" height="1055" loading="lazy"
-                 alt="TropiBlend Pineapple Salsa guide: on grilled fish, in shrimp tacos and served as a dip with tortilla chips">
-            <span class="zoom-hint">View full guide</span>
+                 alt="TropiBlend Pineapple Salsa guide: top it on grilled fish, enjoy it with tacos or serve it as a dip">
+            <span class="zoom-hint">View guide</span>
           </button>
-          <div class="recipe-body">
-            <p class="script-accent berry">3 delicious ways to enjoy!</p>
-            <h3>3 ways with Pineapple Salsa</h3>
-            <p>A burst of tropical freshness in every bite.</p>
+          <div class="guide-body">
+            <p class="guide-kicker">A burst of tropical freshness</p>
+            <h3>Three ways with Pineapple Salsa</h3>
             <ol class="steps">
-              <li><span>1</span><strong>Top it on grilled fish.</strong> Adds a sweet and tangy kick.</li>
-              <li><span>2</span><strong>Perfect with tacos.</strong> Brings fresh, fruity flavor.</li>
-              <li><span>3</span><strong>Enjoy as a dip.</strong> Great with chips, crackers or your favorite snacks.</li>
+              <li><strong>On grilled fish.</strong> Adds a sweet and tangy kick.</li>
+              <li><strong>With tacos.</strong> Brings fresh, fruity flavor.</li>
+              <li><strong>As a dip.</strong> Great with chips, crackers or snacks.</li>
             </ol>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- ============ Our story ============ -->
     <section class="section story" id="story" aria-labelledby="story-title">
-      <div class="container story-inner">
+      <div class="container story-grid">
         <figure class="story-media">
-          <img src="images/tropiblend-wooden-sign.jpg" width="1254" height="1254" loading="lazy"
-               alt="The TropiBlend logo carved into a round wooden sign with palm leaf shadows">
+          <img src="images/tropiblend-wooden-sign.jpg" width="1254" height="1254" loading="lazy" alt="The TropiBlend logo on a wooden sign">
         </figure>
         <div class="story-copy">
-          <p class="eyebrow">Our story</p>
-          <h2 id="story-title">A taste of the tropics, made in Cagayan de Oro</h2>
+          <h2 id="story-title">A taste of the tropics, <em>made in Cagayan de Oro.</em></h2>
           <p>TropiBlend is a Filipino food brand from Cagayan de Oro City, the City of Golden Friendship. We make gourmet salsas, pickles, pesto and salad dressing that bring bold, bright flavor to the dishes Filipinos already love, from inihaw and fried chicken to pasta and fresh salads.</p>
-          <p>Every jar starts with fresh fruit, vegetables and herbs, including sweet mangoes, ripe pineapples, crisp cucumbers and fragrant basil. We blend them in small batches with simple pantry ingredients like lime, cane sugar, salt and spices. There are no artificial preservatives, just real flavor you can taste.</p>
-          <ul class="values">
-            <li><strong>Premium</strong> gourmet condiments</li>
-            <li><strong>Locally</strong> crafted</li>
-            <li><strong>Perfect</strong> for sharing</li>
-            <li><strong>A taste</strong> of the tropics</li>
-          </ul>
+          <p>Every jar starts with fresh fruit, vegetables and herbs: sweet mangoes, ripe pineapples, crisp cucumbers and fragrant basil. We blend them in small batches with simple pantry ingredients like vinegar, citrus, cane sugar, salt and spices. There are no artificial preservatives, just real flavor you can taste.</p>
         </div>
+        <ul class="values">
+          <li data-flavor="pineapple"><strong>Premium</strong> gourmet condiments</li>
+          <li data-flavor="cucumber"><strong>Locally</strong> crafted in CDO</li>
+          <li data-flavor="onion"><strong>Perfect</strong> for sharing</li>
+          <li data-flavor="mango"><strong>A taste</strong> of the tropics</li>
+        </ul>
       </div>
     </section>
 
@@ -546,7 +659,6 @@
     <section class="section find-us" id="find-us" aria-labelledby="find-title">
       <div class="container find-inner">
         <div class="find-copy">
-          <p class="eyebrow eyebrow-light">Where to buy in CDO</p>
           <h2 id="find-title">Kagay-anons, come taste TropiBlend!</h2>
           <div class="event-card">
             <p class="event-label">Catch us at</p>
@@ -561,9 +673,9 @@
             </p>
             <p>Come visit us, meet the team and taste TropiBlend products firsthand.</p>
           </div>
-          <p class="find-alt">Can't make it to the mall? Order directly and we'll arrange pickup or delivery details with you.</p>
+          <p class="find-alt">Can't make it to the mall? Order online and pick up, or we'll deliver within Cagayan de Oro.</p>
           <div class="find-actions">
-            <a class="btn btn-light" href="#contact">Place an order</a>
+            <a class="btn btn-light" href="shop.html">Shop online</a>
             <a class="btn btn-outline-light" href="https://www.facebook.com/TropiBlendph" target="_blank" rel="noopener">Follow @TropiBlendph</a>
           </div>
         </div>
@@ -628,24 +740,27 @@
     <!-- ============ FAQ ============ -->
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq-inner">
-        <header class="section-head">
-          <p class="eyebrow">Good to know</p>
-          <h2 id="faq-title">Frequently asked questions</h2>
-          <div class="leaf-rule" aria-hidden="true"><span></span><i class="leaf-mark"></i><span></span></div>
+        <header class="faq-head">
+          <h2 id="faq-title">Good to <em>know.</em></h2>
+          <p>Can't find your answer? <a href="https://m.me/TropiBlendph" target="_blank" rel="noopener">Message us on Facebook</a> or call <a href="tel:+639564479961">0956 447 9961</a>.</p>
         </header>
 
         <div class="faq-list">
           <details>
             <summary>Where can I buy TropiBlend in Cagayan de Oro?</summary>
-            <p>Visit our booth at the <strong>MSME fair at SM CDO Downtown</strong> (starting September 9, 2026). You can also order directly by messaging <a href="https://www.facebook.com/TropiBlendph" target="_blank" rel="noopener">TropiBlendph on Facebook</a>, calling or texting <a href="tel:+639564479961">0956 447 9961</a>, or emailing <a href="mailto:elsie@tropiblend.com">elsie@tropiblend.com</a>.</p>
+            <p>Visit our booth at the <strong>MSME fair at SM CDO Downtown</strong> (starting September 9, 2026). You can also <a href="shop.html">order online</a>, message <a href="https://www.facebook.com/TropiBlendph" target="_blank" rel="noopener">TropiBlendph on Facebook</a>, call or text <a href="tel:+639564479961">0956 447 9961</a>, or email <a href="mailto:elsie@tropiblend.com">elsie@tropiblend.com</a>.</p>
           </details>
           <details>
             <summary>How do I order?</summary>
-            <p>Send us the products and quantities you'd like on Facebook Messenger, by phone or by email. You can also use the order form below. We'll confirm availability, price and pickup or delivery details within Cagayan de Oro.</p>
+            <p>Add jars to your cart in the <a href="shop.html">shop</a>, or send us the products, sizes and quantities you'd like on Facebook Messenger, by phone or by email. You can also use the order form below. We'll confirm availability and pickup or delivery details within Cagayan de Oro.</p>
+          </details>
+          <details>
+            <summary>What sizes and prices are there?</summary>
+            <p>Every product comes in two sizes. <strong>Pineapple Salsa</strong> (₱385 / ₱295), <strong>Mango Salsa</strong> (₱485 / ₱385) and <strong>Pickled Cucumber</strong> (₱355 / ₱255) come in 500 ml and 350 ml jars. <strong>Pickled Onion</strong> (₱295 / ₱225) and <strong>Pesto</strong> (₱605 / ₱375) come in 350 ml and 200 ml jars. <strong>Mango Salad Dressing</strong> (₱495 / ₱325) comes in 350 ml and 150 ml bottles.</p>
           </details>
           <details>
             <summary>Are TropiBlend products all natural?</summary>
-            <p>Yes. Every TropiBlend product is made from fresh and natural ingredients, with <strong>no artificial preservatives</strong>. The full ingredient list is printed on each label and shown on each product above.</p>
+            <p>Yes. Every TropiBlend product is made from fresh and natural ingredients, with <strong>no artificial preservatives</strong>. The full ingredient list is printed on each label and shown under each product above.</p>
           </details>
           <details>
             <summary>Do any products contain allergens?</summary>
@@ -662,11 +777,11 @@
     <!-- ============ Contact ============ -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Order &amp; contact</p>
-          <h2 id="contact-title">Get your TropiBlend in Cagayan de Oro</h2>
-          <div class="leaf-rule" aria-hidden="true"><span></span><i class="leaf-mark"></i><span></span></div>
-          <p class="section-intro">Message, call or email us. Or fill in the form and we'll get back to you to confirm your order.</p>
+        <header class="split-head">
+          <h2 id="contact-title">Say <em>hello.</em></h2>
+          <div class="split-head-side">
+            <p>Message, call or email us. Or fill in the form and we'll get back to you to confirm your order, bulk order or event inquiry.</p>
+          </div>
         </header>
 
         <div class="contact-grid">
@@ -709,8 +824,8 @@
           </div>
 
           <form class="order-form" id="order-form" novalidate>
-            <h3>Order / inquiry form</h3>
-            <p class="form-note">This opens your email app with your order details filled in, ready to send to TropiBlend.</p>
+            <h3>Order or inquiry form</h3>
+            <p class="form-note">This opens your email app with your details filled in, ready to send to TropiBlend.</p>
 
             <div class="field">
               <label for="f-name">Your name</label>
@@ -724,7 +839,7 @@
                 <p class="field-error" id="f-phone-error" hidden>Please enter a mobile number so we can confirm.</p>
               </div>
               <div class="field">
-                <label for="f-area">Barangay / area in CDO <span class="optional">(optional)</span></label>
+                <label for="f-area">Barangay or area in CDO <span class="optional">(optional)</span></label>
                 <input id="f-area" name="area" type="text" autocomplete="address-level3" placeholder="e.g. Carmen, Lapasan">
               </div>
             </div>
@@ -732,18 +847,18 @@
             <fieldset class="field">
               <legend>Products <span class="optional">(choose any)</span></legend>
               <div class="checks">
-                <label><input type="checkbox" name="product" value="Pineapple Salsa (500 ml)"> Pineapple Salsa</label>
-                <label><input type="checkbox" name="product" value="Mango Salsa (500 ml)"> Mango Salsa</label>
-                <label><input type="checkbox" name="product" value="Pickled Cucumber (500 ml)"> Pickled Cucumber</label>
-                <label><input type="checkbox" name="product" value="Pickled Onion (350 ml)"> Pickled Onion</label>
-                <label><input type="checkbox" name="product" value="Pesto (300 ml)"> Pesto</label>
-                <label><input type="checkbox" name="product" value="Mango Salad Dressing (350 ml)"> Mango Salad Dressing</label>
+                <label><input type="checkbox" name="product" value="Pineapple Salsa"> Pineapple Salsa</label>
+                <label><input type="checkbox" name="product" value="Mango Salsa"> Mango Salsa</label>
+                <label><input type="checkbox" name="product" value="Pickled Cucumber"> Pickled Cucumber</label>
+                <label><input type="checkbox" name="product" value="Pickled Onion"> Pickled Onion</label>
+                <label><input type="checkbox" name="product" value="Pesto"> Pesto</label>
+                <label><input type="checkbox" name="product" value="Mango Salad Dressing"> Mango Salad Dressing</label>
               </div>
             </fieldset>
 
             <div class="field">
-              <label for="f-message">Quantities &amp; message</label>
-              <textarea id="f-message" name="message" rows="4" placeholder="e.g. 2 Mango Salsa, 1 Pesto. Pickup this Saturday?"></textarea>
+              <label for="f-message">Sizes, quantities &amp; message</label>
+              <textarea id="f-message" name="message" rows="4" placeholder="e.g. 2 Mango Salsa 500 ml, 1 Pesto 200 ml. Pickup this Saturday?"></textarea>
             </div>
 
             <button class="btn btn-primary btn-block" type="submit">Send order by email</button>
@@ -792,7 +907,13 @@
     </div>
   </footer>
 
-  <!-- Cart (only shown once prices and GCash details are set in shop-config.js) -->
+  <!-- Mobile "view cart" bar -->
+  <a class="cart-bar" href="checkout.html" data-cart-bar hidden>
+    <span data-bar-count>0 items</span>
+    <strong>View cart <span data-bar-total></span></strong>
+  </a>
+
+  <!-- Cart (only shown once prices are set in shop-config.js) -->
   <dialog class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title">
     <div class="cart-panel">
       <header class="cart-head">

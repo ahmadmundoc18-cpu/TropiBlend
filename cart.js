@@ -8,14 +8,24 @@
   "use strict";
 
   var cfg = window.TROPIBLEND_SHOP || { products: [] };
-  var KEY = "tropiblend-cart-v1";
+  var KEY = "tropiblend-cart-v2";
   var MAX_QTY = 50;
+
+  // Each product has several sizes; the cart works with one entry per product + size,
+  // e.g. "pesto-350". byId maps those ids to { id, product, name, size, ml, price, image }.
   var byId = {};
-  cfg.products.forEach(function (p) { byId[p.id] = p; });
+  var variants = [];
+  cfg.products.forEach(function (p) {
+    (p.sizes || []).forEach(function (s) {
+      var v = { id: p.id + "-" + s.ml, product: p.id, name: p.name, size: s.label, ml: s.ml, price: s.price, image: s.image };
+      byId[v.id] = v;
+      variants.push(v);
+    });
+  });
 
   /* ---------- What's configured? ---------- */
   function missingPrices() {
-    return cfg.products.filter(function (p) { return !(p.price > 0); }).map(function (p) { return "price for " + p.name; });
+    return variants.filter(function (v) { return !(v.price > 0); }).map(function (v) { return "price for " + v.name + " " + v.size; });
   }
   function missingCheckout() {
     var m = [];
@@ -24,7 +34,7 @@
     if (!cfg.formEndpoint) m.push("formEndpoint");
     return m;
   }
-  var open = cfg.products.length > 0 && missingPrices().length === 0;
+  var open = variants.length > 0 && missingPrices().length === 0;
   var checkoutReady = open && missingCheckout().length === 0;
 
   /* ---------- State ---------- */
@@ -45,14 +55,16 @@
   function clampQty(n) { n = Math.floor(Number(n) || 0); return Math.max(0, Math.min(MAX_QTY, n)); }
 
   var peso = new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP" });
+  var pesoWhole = new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP", maximumFractionDigits: 0 });
 
   var api = {
     ready: open,              // shop is open (prices set)
     checkoutReady: checkoutReady,
     missing: function () { return missingPrices().concat(missingCheckout()); },
     config: cfg,
-    money: function (n) { return peso.format(n); },
-    product: function (id) { return byId[id]; },
+    money: function (n) { return (n % 1 ? peso : pesoWhole).format(n); },
+    product: function (id) { return byId[id]; },   // id = product + size, e.g. "pesto-350"
+    variants: variants,
     items: function () {
       return Object.keys(state).filter(function (id) { return byId[id] && state[id] > 0; }).map(function (id) {
         var p = byId[id];
@@ -89,7 +101,7 @@
     var banner = document.createElement("div");
     banner.className = "demo-banner";
     banner.setAttribute("role", "note");
-    banner.innerHTML = "<strong>Preview mode:</strong> prices and GCash details are placeholders. Online orders aren't live yet.";
+    banner.innerHTML = "<strong>Preview mode:</strong> online checkout isn't live yet. To order now, message us on Facebook or call 0956 447 9961.";
     document.body.insertBefore(banner, document.body.firstChild);
   }
 
@@ -122,18 +134,6 @@
   api.onChange(renderBadges);
   renderBadges();
 
-  /* ---------- Homepage product cards: price + "Add to cart" ---------- */
-  $$(".order-btn[data-id]").forEach(function (btn) {
-    var p = byId[btn.dataset.id];
-    if (!p) return;
-    btn.textContent = "Add to cart";
-    btn.classList.add("add-to-cart");
-    var size = btn.closest(".product-body").querySelector(".product-size");
-    if (size && !btn.closest(".product-body").querySelector(".product-price")) {
-      size.insertAdjacentHTML("afterend", '<p class="product-price">' + esc(api.money(p.price)) + "</p>");
-    }
-  });
-
   /* ---------- Quantity pickers next to "Add to cart" (shop page) ---------- */
   document.addEventListener("click", function (e) {
     var step = e.target.closest("[data-buy] [data-step]");
@@ -153,18 +153,32 @@
   }
   function closeDrawer() { drawer.close ? drawer.close() : drawer.removeAttribute("open"); }
 
-  // Add to cart (capture phase so it wins over the homepage's old "order form" handler)
+  // Add to cart: the button's product card says which size is selected
+  function selectedVariant(btn) {
+    var card = btn.closest("[data-product]");
+    if (!card) return null;
+    var picked = card.querySelector("input[data-size]:checked") || card.querySelector("input[data-size]");
+    return picked ? card.dataset.product + "-" + picked.value : null;
+  }
   document.addEventListener("click", function (e) {
-    var btn = e.target.closest(".add-to-cart[data-id]");
+    var btn = e.target.closest(".add-to-cart");
     if (!btn) return;
     e.preventDefault();
-    e.stopImmediatePropagation();
+    var id = selectedVariant(btn);
+    if (!id || !byId[id]) return;
     var buy = btn.closest("[data-buy]");
     var input = buy && buy.querySelector("[data-add-qty]");
-    api.add(btn.dataset.id, input ? Number(input.value) || 1 : 1);
+    api.add(id, input ? Number(input.value) || 1 : 1);
     if (input) input.value = 1;
+    btn.classList.add("is-added");
+    setTimeout(function () { btn.classList.remove("is-added"); }, 1400);
+    cartLinks.forEach(function (link) {
+      link.classList.remove("is-bumped");
+      void link.offsetWidth; // restart the animation
+      link.classList.add("is-bumped");
+    });
     if (drawer) openDrawer(btn);
-  }, true);
+  });
 
   bars.forEach(function (bar) {
     bar.addEventListener("click", function (e) { e.preventDefault(); openDrawer(bar); });
